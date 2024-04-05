@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -5630837196135454786}
   - component: {fileID: 6857005737327547276}
   - component: {fileID: 8865204435639994995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CannonBall
   m_TagString: CannonBall
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6075105939407939070}
   - component: {fileID: 4822629829364987433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
