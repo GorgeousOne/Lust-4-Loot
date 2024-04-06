@@ -84,9 +84,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04806bda9e58c2f449f82ec2520b0ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1768598995399898293, guid: ac9b507d4c7e49741b4780019bdce812, type: 3}
   shootInterval: 5
   bulletSpeed: 3
-  bulletPrefab: {fileID: 1768598995399898293, guid: ac9b507d4c7e49741b4780019bdce812, type: 3}
+  travelTime: 2
+  travelDist: 4
 --- !u!1 &928334430858265452
 GameObject:
   m_ObjectHideFlags: 0
