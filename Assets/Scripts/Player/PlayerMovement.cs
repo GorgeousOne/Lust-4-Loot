@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	
 	public GameObject bulletPrefab;
-	public float bulletSpeed = 3f;
+	public float bulletSpeed = 5f;
 	public float reloadTime = 0.5f;
 	
 	private Vector2 inputVel;
@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	public void OnShoot(){
+		if (Time.time < lastShootTime + reloadTime) {
+			return;
+		}
+		lastShootTime = Time.time;
 		int playerFacing = playerNumber == 1 ? 1 : -1;
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 

@@ -13,24 +13,24 @@ public class ItemLogic : MonoBehaviour {
 	
 	private void OnEnable() {
 		rb = GetComponent<Rigidbody2D>();
-	}
-
-	private void FixedUpdate(){
 		rb.velocity = Vector2.right * speed;
 	}
 
-
 	public void Drop() {
-		rb.gravityScale = 2;
+		rb.gravityScale = 3;
 		rb.velocity = new Vector2(Random.Range(-fallVel, fallVel), bounceVel);
+
+		transform.parent = null;
 		Destroy(GetComponent<Collider2D>());
 		Destroy(gameObject, 5f);
-		transform.parent = null;
 	}
 	
 	private void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.CompareTag("CannonBall")) {
 			onCannonBallHit.Invoke(gameObject);
+		}
+		else if (other.gameObject.layer == LayerMask.NameToLayer("Default")) {
+			Destroy(gameObject);		
 		}
 	}
 }

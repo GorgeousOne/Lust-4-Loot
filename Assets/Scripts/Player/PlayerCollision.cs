@@ -26,7 +26,7 @@ public class PlayerCollision : MonoBehaviour {
 	
 	public void UnloadItems() {
 		foreach (GameObject item in hoardedItems) {
-			Destroy(item.GetComponent<ItemLogic>());
+			Destroy(item);
 		}
 		hoardedItems.Clear();
 		onItemsChanged.Invoke(hoardedItems.Count);

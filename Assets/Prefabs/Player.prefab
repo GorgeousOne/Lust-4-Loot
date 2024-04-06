@@ -207,8 +207,8 @@ MonoBehaviour:
   maxSpeed: 5
   minSpeed: 1
   bulletPrefab: {fileID: 1768598995399898293, guid: ac9b507d4c7e49741b4780019bdce812, type: 3}
-  bulletSpeed: 3
-  reloadTime: 0.5
+  bulletSpeed: 5
+  reloadTime: 1
 --- !u!50 &6026919258544251605
 Rigidbody2D:
   serializedVersion: 4
