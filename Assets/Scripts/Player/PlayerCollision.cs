@@ -24,9 +24,22 @@ public class PlayerCollision : MonoBehaviour {
 		}
 	}
 	
+	public void UnloadItems() {
+		foreach (GameObject item in hoardedItems) {
+			Destroy(item.GetComponent<ItemLogic>());
+		}
+		hoardedItems.Clear();
+		onItemsChanged.Invoke(hoardedItems.Count);
+	}
+	
+	public int getItemCount() {
+		return hoardedItems.Count;
+	}
+	
+	
 	private void TakeDamage() {
-		for (int i = 0; i < hoardedItems.Count; i++) {
-			hoardedItems[i].GetComponent<ItemLogic>().Drop();
+		foreach (GameObject item in hoardedItems) {
+			item.GetComponent<ItemLogic>().Drop();
 		}
 		hoardedItems.Clear();
 		onItemsChanged.Invoke(hoardedItems.Count);
