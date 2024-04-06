@@ -13,9 +13,9 @@ public class BallsLogic : MonoBehaviour {
 	}
 	
 	private void Drop() {
-		Destroy(GetComponent<Collider2D>());
-		rb.gravityScale = 3;
+		rb.gravityScale = 2;
 		rb.velocity = Vector2.up * bounceVel;
+		Destroy(GetComponent<Collider2D>());
 		Destroy(gameObject, 5f);
 	}
 	

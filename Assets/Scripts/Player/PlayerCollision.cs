@@ -24,15 +24,12 @@ public class PlayerCollision : MonoBehaviour {
 		}
 	}
 	
-	private void TakeDamage() {
-		for (int i = 0; i < hoardedItems.Count; i++) {
-			hoardedItems[i].GetComponent<ItemLogic>().Drop();
-		}
-		hoardedItems.Clear();
-		onItemsChanged.Invoke(hoardedItems.Count);
+	public int GetItemCount() {
+		return hoardedItems.Count;
 	}
-	
+
 	private void PickupItem(GameObject item) {
+		item.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Front";
 		Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
 		rb.velocity = Vector2.zero;
 		item.transform.parent = transform;
@@ -44,6 +41,22 @@ public class PlayerCollision : MonoBehaviour {
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 
+	public void UnloadItems(Vector2 target) {
+		foreach (GameObject item in hoardedItems) {
+			item.GetComponent<ItemLogic>().Unload(target);
+		}
+		hoardedItems.Clear();
+		onItemsChanged.Invoke(hoardedItems.Count);
+	}
+	
+	private void TakeDamage() {
+		foreach (GameObject item in hoardedItems) {
+			item.GetComponent<ItemLogic>().Drop();
+		}
+		hoardedItems.Clear();
+		onItemsChanged.Invoke(hoardedItems.Count);
+	}
+	
 	private void OnItemHit(GameObject item) {
 		int index = hoardedItems.IndexOf(item.gameObject);
 		
