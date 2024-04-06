@@ -2,25 +2,34 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCollision : MonoBehaviour {
 
 	public int playerNumber = 1;
-
-	public float stackOffset = .5f;
+	public Vector2 stackOffset = Vector2.zero;
 	public float stackDist = .2f;
+	public UnityEvent<int> onItemsChanged;
+	
 	private List<GameObject> hoardedItems = new();
 	
-	private void OnEnable() {
-	}
-
 	private void Update() {
 		for (int i = 0; i < hoardedItems.Count; i++) {
-			hoardedItems[i].transform.position = transform.position + Vector3.up * (i * stackDist + stackOffset);
+			Vector3 itemPos = (Vector3) stackOffset + i * stackDist * Vector3.up;
+			
+			if (playerNumber == 2) {
+				itemPos.x *= -1;
+			}
+			hoardedItems[i].transform.position = transform.position + itemPos;
 		}
 	}
-
+	
 	private void TakeDamage() {
+		for (int i = 0; i < hoardedItems.Count; i++) {
+			hoardedItems[i].GetComponent<ItemLogic>().Drop();
+		}
+		hoardedItems.Clear();
+		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 	
 	private void PickupItem(GameObject item) {
@@ -32,6 +41,7 @@ public class PlayerCollision : MonoBehaviour {
 		itemLogic.onCannonBallHit.AddListener(OnItemHit);
 		
 		hoardedItems.Add(item);
+		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 
 	private void OnItemHit(GameObject item) {
@@ -44,6 +54,7 @@ public class PlayerCollision : MonoBehaviour {
 			hoardedItems[i].GetComponent<ItemLogic>().Drop();
 		}
 		hoardedItems.RemoveRange(index, hoardedItems.Count - index);
+		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 	
 	private void OnCollisionEnter2D(Collision2D collision) {
@@ -53,5 +64,4 @@ public class PlayerCollision : MonoBehaviour {
 			PickupItem(collision.gameObject);
 		}
 	}
-
 }

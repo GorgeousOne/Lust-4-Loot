@@ -204,9 +204,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
+  maxSpeed: 5
+  minSpeed: 1
   bulletPrefab: {fileID: 1768598995399898293, guid: ac9b507d4c7e49741b4780019bdce812, type: 3}
-  speed: 5
   bulletSpeed: 3
+  reloadTime: 0.5
 --- !u!50 &6026919258544251605
 Rigidbody2D:
   serializedVersion: 4
@@ -257,5 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 1
-  stackOffset: 1
-  stackDist: 0.75
+  stackOffset: {x: -0.5, y: 0.2}
+  stackDist: 0.5
+  onItemsChanged:
+    m_PersistentCalls:
+      m_Calls: []
