@@ -1,43 +1,39 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
-	//input fields
-	private PlayerControls controls;
-	private InputAction move;
-	private Vector2 inputVel;
+
+	public int playerNumber = 1;
 	public GameObject bulletPrefab;
+	public float speed = 5f;
 	public float bulletSpeed = 3f;
 	
-	//movement fields
+	private Vector2 inputVel;
 	private Rigidbody2D rb;
-	[SerializeField] private float speed = 5f;
-
-	private void Awake() {
-		rb = GetComponent<Rigidbody2D>();
-		controls = new PlayerControls();
-	}
-
+	
 	private void OnEnable() {
-		move = controls.Player.Move;
-		controls.Player.Shoot.performed += OnShoot;
-		controls.Player.Enable();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
-
-	private void OnShoot(InputAction.CallbackContext context){
+	public void OnShoot(){
+		int playerFacing = playerNumber == 1 ? 1 : -1;
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-		bullet.layer = LayerMask.NameToLayer("OurBullet");
-		Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-		rb.velocity = Vector2.right * bulletSpeed;
+
+		bullet.layer = LayerMask.NameToLayer("Bullet" + playerNumber);
+		
+		Rigidbody2D billetRb = bullet.GetComponent<Rigidbody2D>();
+		billetRb.velocity = Vector2.right * bulletSpeed * playerFacing;
+
+		Debug.Log("TOOT" + playerNumber);
 	}
 
 	// private void OnDisable() {
 	// 	controls.Player.Disable();
 	// }
 
-	private void Update() {
-		inputVel = move.ReadValue<Vector2>();
+	public void OnMove( InputAction.CallbackContext context ) {
+		inputVel = context.ReadValue<Vector2>();
 	}
 
 	private void FixedUpdate() {

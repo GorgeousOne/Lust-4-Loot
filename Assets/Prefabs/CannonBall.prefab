@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -5630837196135454786}
   - component: {fileID: 3121644396221863294}
   - component: {fileID: 8865204435639994995}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: CannonBall
   m_TagString: CannonBall
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ab12b8a68869fa4bacb2b0c2da9c23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounciness: 9
+  bounceVel: 9
 --- !u!1 &6985143864754563864
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6075105939407939070}
   - component: {fileID: 4822629829364987433}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
