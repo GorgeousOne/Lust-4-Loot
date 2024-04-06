@@ -11,20 +11,18 @@ public class ScoreHandler : MonoBehaviour {
 	public float currentScore;
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag("Player1")) {
-			PlayerCollision player = other.gameObject.GetComponent<PlayerCollision>();
-			AddPoints(player.getItemCount(), true);
-			player.UnloadItems();
-		} else if (other.gameObject.CompareTag("Player2")) {
-			PlayerCollision player = other.gameObject.GetComponent<PlayerCollision>();
-			AddPoints(player.getItemCount(), false);
-			player.UnloadItems();
+		bool isPlayer1 = true;
+		
+		if (other.gameObject.CompareTag("Player2")) {
+			isPlayer1 = false;
 		}
-		else {
+		else if (!other.gameObject.CompareTag("Player1")){
 			return;
 		}
+		PlayerCollision player = other.gameObject.GetComponent<PlayerCollision>();
+		AddPoints(player.GetItemCount(), isPlayer1);
+		player.UnloadItems(transform.position);
 		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
-		
 		
 		if (currentScore >= scoreRange) {
 			Debug.Log("Player 1 wins!");
