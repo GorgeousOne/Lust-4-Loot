@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour {
 	private PlayerControls controls;
 	private InputAction move;
 	private Vector2 inputVel;
+	public GameObject bulletPrefab;
+	public float bulletSpeed = 3f;
 	
 	//movement fields
 	private Rigidbody2D rb;
@@ -19,7 +21,16 @@ public class PlayerMovement : MonoBehaviour {
 
 	private void OnEnable() {
 		move = controls.Player.Move;
+		controls.Player.Shoot.performed += OnShoot;
 		controls.Player.Enable();
+	}
+
+
+	private void OnShoot(InputAction.CallbackContext context){
+		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+		bullet.layer = LayerMask.NameToLayer("OurBullet");
+		Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+		rb.velocity = Vector2.right * bulletSpeed;
 	}
 
 	// private void OnDisable() {
