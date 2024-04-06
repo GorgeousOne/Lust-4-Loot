@@ -36,6 +36,9 @@ public class ScoreHandler : MonoBehaviour {
 			float multiplier = (points - 2) * 0.5f;
 			points *= multiplier;
 		}
+		if (!isPlayer1) {
+			points *= -1;
+		}
 		currentScore += points;
 		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
 	}
