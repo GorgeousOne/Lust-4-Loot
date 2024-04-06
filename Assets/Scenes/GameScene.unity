@@ -638,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 1017592641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 76946652}
@@ -770,7 +770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162715104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11, y: 0, z: 0}
+  m_LocalPosition: {x: -15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -987,7 +987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979644564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1233,6 +1233,90 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 6129f9f7-50b6-4e02-ac9c-ad3a4f39faec
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 4e2da69e-dda0-4072-9993-5661233598d9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 26b1b899-9331-44f9-b332-fead2f50c579
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 558a7666-e9be-40e1-8ae7-b8f566187521
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 7887f8d1-f0bc-4bcc-843e-2d71017ac79d
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 29cd19a1-3979-4444-b508-455f43d1f712
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: 2e8a1171-6eb2-4ff6-a82b-68c26e19d76e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: fd7f222c-743a-448d-8293-659f58826b18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: 1391a7c2-bf84-45fb-9381-bede6baf11b4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: ba0a79c9-bb02-4ab5-80ce-c6acf75f5c64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Player1/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Player1/Menu[/Keyboard/escape,/XInputControllerWindows/start]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: Player1/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player1/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: Player2/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: Player2/Menu[/Keyboard/escape,/XInputControllerWindows/start]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: Player2/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746521583810953880, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: Player2/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]
+      objectReference: {fileID: 0}
     - target: {fileID: 6440674659555559011, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
       propertyPath: controls.m_Actions.Array.size
       value: 0
@@ -1313,17 +1397,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: P1
       objectReference: {fileID: 0}
-    - target: {fileID: 6440674659799689738, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
-      propertyPath: m_Color.b
-      value: 0.48490566
+    - target: {fileID: 6440674659555559022, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6440674659799689738, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
-      propertyPath: m_Color.g
-      value: 0.48490566
-      objectReference: {fileID: 0}
-    - target: {fileID: 6440674659799689738, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+    - target: {fileID: 6440674659799689780, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
@@ -1334,17 +1414,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9194305446819469770, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
-      propertyPath: m_Color.b
-      value: 0.60838634
+    - target: {fileID: 64450870134944088, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player2
       objectReference: {fileID: 0}
-    - target: {fileID: 9194305446819469770, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9194305446819469770, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
-      propertyPath: m_Color.r
-      value: 0.50377357
+    - target: {fileID: 9194305446819469812, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9194305447145649581, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
       propertyPath: m_RootOrder
@@ -1393,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 9194305447145649582, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
       propertyPath: m_Name
       value: P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9194305447145649582, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}

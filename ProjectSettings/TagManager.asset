@@ -11,20 +11,20 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Projectile
-  - Enemy
+  - Player1
+  - Player2
+  - Bullet1
+  - Bullet2
+  - Hoarded1
+  - Hoarded2
+  - 
+  - 
+  - 
+  - 
   - Collectable
-  - Hoarded
-  - OurBullet
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

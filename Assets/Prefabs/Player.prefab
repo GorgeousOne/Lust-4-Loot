@@ -93,10 +93,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6026919258544251610}
+  - component: {fileID: 3674021070452980416}
   - component: {fileID: 6026919258544251611}
   - component: {fileID: 6026919258544251605}
   - component: {fileID: 6026919258544251606}
-  - component: {fileID: 6026919258544251604}
   - component: {fileID: 6026919258544251607}
   m_Layer: 3
   m_Name: Player
@@ -121,6 +121,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3674021070452980416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026919258544251609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d4551528279750440ad332ea5f7867c1, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6129f9f7-50b6-4e02-ac9c-ad3a4f39faec
+    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7887f8d1-f0bc-4bcc-843e-2d71017ac79d
+    m_ActionName: Player1/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4e2da69e-dda0-4072-9993-5661233598d9
+    m_ActionName: Player1/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26b1b899-9331-44f9-b332-fead2f50c579
+    m_ActionName: Player1/Menu[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 558a7666-e9be-40e1-8ae7-b8f566187521
+    m_ActionName: Player1/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29cd19a1-3979-4444-b508-455f43d1f712
+    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba0a79c9-bb02-4ab5-80ce-c6acf75f5c64
+    m_ActionName: Player2/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2e8a1171-6eb2-4ff6-a82b-68c26e19d76e
+    m_ActionName: Player2/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fd7f222c-743a-448d-8293-659f58826b18
+    m_ActionName: Player2/Menu[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1391a7c2-bf84-45fb-9381-bede6baf11b4
+    m_ActionName: Player2/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player1
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &6026919258544251611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,8 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa24ca6010a9ed842bf4a76ca9eecee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAsset: {fileID: -944628639613478452, guid: 0274129e21ba356469725de7564acadd, type: 3}
-  actionMapName: 
+  playerNumber: 1
   bulletPrefab: {fileID: 1768598995399898293, guid: ac9b507d4c7e49741b4780019bdce812, type: 3}
   speed: 5
   bulletSpeed: 3
@@ -175,23 +244,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 0.5}
   m_Direction: 1
---- !u!114 &6026919258544251604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026919258544251609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa24ca6010a9ed842bf4a76ca9eecee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputAsset: {fileID: -944628639613478452, guid: 0274129e21ba356469725de7564acadd, type: 3}
-  actionMapName: 
-  bulletPrefab: {fileID: 1768598995399898293, guid: ac9b507d4c7e49741b4780019bdce812, type: 3}
-  speed: 5
-  bulletSpeed: 3
 --- !u!114 &6026919258544251607
 MonoBehaviour:
   m_ObjectHideFlags: 0
