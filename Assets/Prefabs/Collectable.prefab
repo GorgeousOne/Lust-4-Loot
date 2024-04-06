@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4171627971735253705}
   - component: {fileID: 4171627971735253704}
   - component: {fileID: 4171627971735253707}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Collectable
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4171627972608581154}
   - component: {fileID: 4171627972608581181}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
