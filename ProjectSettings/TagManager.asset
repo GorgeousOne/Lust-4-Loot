@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CannonBall
   - PlayerBarrier
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - Projectile
   - Enemy
-  - 
-  - 
+  - Collectable
+  - Hoarded
   - 
   - 
   - 
