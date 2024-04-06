@@ -1,29 +1,35 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
 	//input fields
-	private PlayerControls controls;
-	private InputAction move;
-	private Vector2 inputVel;
+
+	public InputActionAsset inputAsset;
+	public String actionMapName;
+	
 	public GameObject bulletPrefab;
+	public float speed = 5f;
 	public float bulletSpeed = 3f;
 	
-	//movement fields
+	private InputActionMap controls;
+	private InputAction move;
+	private Vector2 inputVel;
 	private Rigidbody2D rb;
-	[SerializeField] private float speed = 5f;
-
-	private void Awake() {
-		rb = GetComponent<Rigidbody2D>();
-		controls = new PlayerControls();
-	}
-
+	
 	private void OnEnable() {
-		move = controls.Player.Move;
-		controls.Player.Shoot.performed += OnShoot;
-		controls.Player.Enable();
+		rb = GetComponent<Rigidbody2D>();
+		controls = inputAsset.FindActionMap(actionMapName);
+		Debug.Log("found map " + actionMapName + " " + controls);
+		move = controls["Move"];
+		controls["Shoot"].performed += OnShoot;
+		
+		controls.Enable();
 	}
 
+	private void OnDisable() {
+		controls.Disable();
+	}
 
 	private void OnShoot(InputAction.CallbackContext context){
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
