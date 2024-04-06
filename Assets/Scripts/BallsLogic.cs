@@ -1,10 +1,11 @@
 using System;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BallsLogic : MonoBehaviour {
 	
-	public float bounciness = 3f;
+	[FormerlySerializedAs("bounciness")] public float bounceVel = 3f;
 	Rigidbody2D rb;
 
 	private void OnEnable() {
@@ -14,7 +15,7 @@ public class BallsLogic : MonoBehaviour {
 	private void Drop() {
 		Destroy(GetComponent<Collider2D>());
 		rb.gravityScale = 3;
-		rb.velocity = Vector2.up * bounciness;
+		rb.velocity = Vector2.up * bounceVel;
 		Destroy(gameObject, 5f);
 	}
 	

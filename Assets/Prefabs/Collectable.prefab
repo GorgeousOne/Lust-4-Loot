@@ -85,6 +85,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.75
+  bounceVel: 6
+  fallVel: 5
+  onCannonBallHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4171627972608581155
 GameObject:
   m_ObjectHideFlags: 0

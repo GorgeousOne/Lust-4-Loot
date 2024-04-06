@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class ItemLogic : MonoBehaviour {
 
 	public float speed = 1;
+	public float bounceVel = 3f;
 	public float fallVel = 3f;
 	
 	public UnityEvent<GameObject> onCannonBallHit;
@@ -19,7 +20,7 @@ public class ItemLogic : MonoBehaviour {
 
 	public void Drop() {
 		rb.gravityScale = 2;
-		rb.velocity = Random.Range(-fallVel, fallVel) * Vector2.left;
+		rb.velocity = new Vector2(Random.Range(-fallVel, fallVel), bounceVel);
 		Destroy(GetComponent<Collider2D>());
 		Destroy(gameObject, 5f);
 		transform.parent = null;

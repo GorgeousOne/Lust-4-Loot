@@ -66,15 +66,13 @@ public class PlayerCollision : MonoBehaviour {
 		if (index == -1) {
 			return;
 		}
-		for (int i = index + 1; i < hoardedItems.Count; i++) {
+		for (int i = index; i < hoardedItems.Count; i++) {
 			hoardedItems[i].GetComponent<ItemLogic>().Drop();
 		}
 		hoardedItems.RemoveRange(index, hoardedItems.Count - index);
 	}
 	
 	private void OnCollisionEnter2D(Collision2D collision) {
-		Debug.Log(collision.GetContact(0).otherCollider.gameObject.tag);
-		
 		if (collision.gameObject.CompareTag("CannonBall")) {
 			TakeDamage();
 		} else if (collision.gameObject.CompareTag("Collectable")) {
