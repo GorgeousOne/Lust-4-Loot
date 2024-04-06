@@ -5,16 +5,19 @@ using Random = UnityEngine.Random;
 
 public class ItemLogic : MonoBehaviour {
 
-	public float speed = 1;
-	public float bounceVel = 3f;
-	public float fallVel = 3f;
+	public float speed = 0.75f;
+	public float bounceVel = 6f;
+	public float fallVel = 5f;
 	
 	public UnityEvent<GameObject> onCannonBallHit;
 	private Rigidbody2D rb;
 	
 	private void OnEnable() {
 		rb = GetComponent<Rigidbody2D>();
-		rb.velocity = Vector2.left * speed;
+	}
+
+	private void FixedUpdate(){
+		rb.velocity = Vector2.right * speed;
 	}
 
 
