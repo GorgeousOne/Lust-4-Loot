@@ -19,10 +19,13 @@ public class ScoreHandler : MonoBehaviour {
 	
 	public float moveTime = 1f;
 	public float moveRange = 3f;
+
+	public AudioSource soundOnCashOut;
 	
 	private float moveStartTime;
 	private Vector2 moveStartPos;
 	private Vector2 moveTargetPos;
+
 	
 	private void Update() {
 		if (Time.time <= moveStartTime + moveTime) {
@@ -64,6 +67,7 @@ public class ScoreHandler : MonoBehaviour {
 		if (points != 0) {
 			DisplayPoints((int) points, isPlayer1);
 			ChangePos();
+			soundOnCashOut.Play();
 		}
 	}
 
