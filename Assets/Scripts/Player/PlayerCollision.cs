@@ -11,6 +11,7 @@ public class PlayerCollision : MonoBehaviour {
 	public float stackDist = .2f;
 	public UnityEvent<int> onItemsChanged;
 	public AudioSource soundOnHit;
+	public AudioSource pickUpLoot;
 	private List<GameObject> hoardedItems = new();
 
 	void start (){
@@ -42,6 +43,7 @@ public class PlayerCollision : MonoBehaviour {
 		itemLogic.onCannonBallHit.AddListener(OnItemHit);
 		
 		hoardedItems.Add(item);
+		pickUpLoot.Play();
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 
@@ -68,6 +70,7 @@ public class PlayerCollision : MonoBehaviour {
 		if (index == -1) {
 			return;
 		}
+		soundOnHit.Play();
 		for (int i = index; i < hoardedItems.Count; i++) {
 			hoardedItems[i].GetComponent<ItemLogic>().Drop();
 		}
