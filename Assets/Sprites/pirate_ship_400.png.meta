@@ -121,9 +121,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1625
+        y: 1620
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,9 +142,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 1625
+        y: 1620
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,9 +163,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 1625
+        y: 1620
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,9 +184,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1200
-        y: 1625
+        y: 1620
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,9 +205,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 1625
+        y: 1620
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,9 +226,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 1625
+        y: 1620
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,9 +247,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1225
+        y: 1215
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,9 +268,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 1225
+        y: 1215
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,9 +289,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 1225
+        y: 1215
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,9 +310,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1200
-        y: 1225
+        y: 1215
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,9 +331,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 1225
+        y: 1215
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,9 +352,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 1225
+        y: 1215
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,9 +373,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 825
+        y: 810
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,9 +394,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 825
+        y: 810
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -415,9 +415,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 825
+        y: 810
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,9 +436,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1200
-        y: 825
+        y: 810
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -457,9 +457,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 825
+        y: 810
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,9 +478,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 825
+        y: 810
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -499,9 +499,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 425
+        y: 405
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -520,9 +520,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 425
+        y: 405
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -541,9 +541,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 425
+        y: 405
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -562,9 +562,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1200
-        y: 425
+        y: 405
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -583,9 +583,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1600
-        y: 425
+        y: 405
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,9 +604,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 425
+        y: 405
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -625,9 +625,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 25
+        y: 0
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -646,9 +646,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 400
-        y: 25
+        y: 0
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -667,9 +667,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 800
-        y: 25
+        y: 0
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -687,10 +687,10 @@ TextureImporter:
       name: pirate_ship_400_27
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 25
+        x: 2000
+        y: 0
         width: 400
-        height: 400
+        height: 405
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -700,48 +700,6 @@ TextureImporter:
       bones: []
       spriteID: dea9e9dbb966cc0469471b41540c2260
       internalID: 1842412041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pirate_ship_400_28
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 25
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6573ae71c47ca464c8632af746f816cf
-      internalID: -1789181622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pirate_ship_400_29
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 25
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0329c11487e9a194ab7dc003311fbdde
-      internalID: -1037853767
       vertices: []
       indices: 
       edges: []
@@ -778,8 +736,6 @@ TextureImporter:
       pirate_ship_400_25: -584662167
       pirate_ship_400_26: 1026764611
       pirate_ship_400_27: 1842412041
-      pirate_ship_400_28: -1789181622
-      pirate_ship_400_29: -1037853767
       pirate_ship_400_3: 644075934
       pirate_ship_400_4: 450823932
       pirate_ship_400_5: 2098652960
