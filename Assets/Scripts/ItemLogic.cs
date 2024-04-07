@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
+using System.Collections.Generic;
 
 public class ItemLogic : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class ItemLogic : MonoBehaviour {
 	public float bounceVel = 6f;
 	public float fallVel = 5f;
 	public float unloadTime = 1f;
+
+	public List<Sprite> icons;
 	
 	public UnityEvent<GameObject> onCannonBallHit;
 	private Rigidbody2D rb;
@@ -19,6 +22,10 @@ public class ItemLogic : MonoBehaviour {
 	private void OnEnable() {
 		rb = GetComponent<Rigidbody2D>();
 		rb.velocity = Vector2.right * speed;
+
+		int rand = Random.Range(0, icons.Count );
+		Debug.Log("so many " + icons.Count);
+		GetComponent<SpriteRenderer>().sprite = icons[rand];
 	}
 	
 	public void Update() {
