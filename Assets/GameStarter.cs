@@ -10,8 +10,10 @@ public class GameStarter : MonoBehaviour {
 	public GameObject itemSpawner;
 	public GameObject player1;
 	public GameObject player2;
+	public AudioSource startgame;
 	
 	public void OnButtonPress() {
+		startgame.Play();
 		//hide the menu on start button press
 		menuCanvas.gameObject.SetActive(false);
 		scoreSlider.SetActive(true);
@@ -26,5 +28,10 @@ public class GameStarter : MonoBehaviour {
 		foreach (PlayerMovement player in players) {
 			player.enabled = true;
 		}
+		PlayerCollision[] players1 = FindObjectsOfType<PlayerCollision>();
+		foreach (PlayerCollision player1 in players1) {
+			player1.TakeDamage();
+		}
+
 	}
 }

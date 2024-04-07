@@ -9,10 +9,11 @@ public class PlayerMovement : MonoBehaviour {
 	
 	private float currentSpeed = 5f;
 	
-	
 	public GameObject bulletPrefab;
 	public float bulletSpeed = 5f;
 	public float reloadTime = 0.5f;
+
+	public AudioSource fireSound;
 	
 	private Vector2 inputVel;
 	private Rigidbody2D rb;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
 		
 		Rigidbody2D billetRb = bullet.GetComponent<Rigidbody2D>();
 		billetRb.velocity = Vector2.right * bulletSpeed * playerFacing;
+		fireSound.Play();
 	}
 
 	public void OnMove( InputAction.CallbackContext context ) {

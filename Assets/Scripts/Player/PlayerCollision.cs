@@ -53,7 +53,7 @@ public class PlayerCollision : MonoBehaviour {
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 	
-	private void TakeDamage() {
+	public void TakeDamage() {
 		soundOnHit.Play();
 		foreach (GameObject item in hoardedItems) {
 			item.GetComponent<ItemLogic>().Drop();

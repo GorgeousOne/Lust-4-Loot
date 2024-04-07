@@ -21,6 +21,7 @@ public class ScoreHandler : MonoBehaviour {
 	public float moveRange = 3f;
 
 	public AudioSource soundOnCashOut;
+	public AudioSource endGame;
 	
 	private float moveStartTime;
 	private Vector2 moveStartPos;
@@ -79,6 +80,7 @@ public class ScoreHandler : MonoBehaviour {
 	}
 	
 	private void AnnounceWinner(bool isPlayer1) {
+		endGame.Play();
 		winnerText.text = isPlayer1 ? "Player 1 wins!" : "Player 2 wins!";
 		winnerText.color = isPlayer1 ? Color.red : Color.green;
 		winnerText.gameObject.SetActive(true);
