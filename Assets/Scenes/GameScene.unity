@@ -719,6 +719,8 @@ MonoBehaviour:
   scoreSlider: {fileID: 2012944690}
   scoreRange: 50
   currentScore: 0
+  moveTime: 1
+  moveRange: 3
 --- !u!70 &963877484
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2141,10 +2143,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 6440674659799689738, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 083e45eb388dc0d428e66fdea17405c0, type: 3}
     - target: {fileID: 6440674659799689780, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -2166,10 +2164,6 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9194305446819469770, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 083e45eb388dc0d428e66fdea17405c0, type: 3}
     - target: {fileID: 9194305446819469812, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
       propertyPath: m_Layer
       value: 7

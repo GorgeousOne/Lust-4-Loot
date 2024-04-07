@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,9 +101,651 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pirate_ship_400_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1625
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ce720c9815792e4f9e700d20684e968
+      internalID: 791807382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1625
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd800c307ded21647aacd1ddad17fda0
+      internalID: 508921954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1625
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913a9f8696974614b81fc0c778224ef6
+      internalID: -1513067828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1625
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4d54cb8db527e4184a2715c599714f
+      internalID: 644075934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1625
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2acf06f0fedf56479a415cac9c03275
+      internalID: 450823932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1625
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4499a3f0c4f321f468ff331d6ea07759
+      internalID: 2098652960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1225
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b870619f4edb644abea3bd482f6a83
+      internalID: -106660832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1225
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f3f3b2ce0086b4c92418331966f0b8
+      internalID: 1824889894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1225
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c28130b2d73828d4391c0cc94d05f687
+      internalID: 1216413458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_9
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1225
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1512a222b0f1f9e45b598eaf04f2a692
+      internalID: 1539568111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1225
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0472bbc764cdc9f42839c8f30adf6fe2
+      internalID: -1356148228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_11
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1225
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5357974a7d03af46be5a32a36df46be
+      internalID: 2004294600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 825
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468f231ff334f03428ead04b833dd22e
+      internalID: -442031375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 825
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93384f2dbd3e7a458ed6fe2d8704c27
+      internalID: 763239354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 825
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae4a71a710196d4b87b65c132a55f62
+      internalID: -581170170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 825
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3fa89e7a81460441931ddb68c7ec4ae
+      internalID: -2027979418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_16
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 825
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be06c0db5e1dad4b900d05b54020343
+      internalID: -1779726628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_17
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 825
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6254fba311ad2b4d882b7d1a1b71984
+      internalID: -842566697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 425
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fd16a7fe475114da3ed70c211efd3c
+      internalID: -1756316742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_19
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 425
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1fc6ce839d4ec4a996d3987303c45b
+      internalID: -1322414345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 425
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b90902a4f49434ba670f0387f8b67a
+      internalID: 534193801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_21
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 425
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c907d4aa5bf0a4b82d732b74f7d0e1
+      internalID: 248837004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_22
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 425
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d772ba50f94d84b4492283661d6608f7
+      internalID: -640278397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_23
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 425
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b234657d66465b49a3ceaf2e734cc92
+      internalID: 1435390131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816aa8643d310664fb5d5cbdb57d3136
+      internalID: -1426362165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_25
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 25
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864b674d28e542d4cbf68f00f8758b58
+      internalID: -584662167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_26
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 25
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444526ca561b1c24ebf5586844acda09
+      internalID: 1026764611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_27
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 25
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea9e9dbb966cc0469471b41540c2260
+      internalID: 1842412041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_28
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 25
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6573ae71c47ca464c8632af746f816cf
+      internalID: -1789181622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pirate_ship_400_29
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 25
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0329c11487e9a194ab7dc003311fbdde
+      internalID: -1037853767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +756,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pirate_ship_400_0: 791807382
+      pirate_ship_400_1: 508921954
+      pirate_ship_400_10: -1356148228
+      pirate_ship_400_11: 2004294600
+      pirate_ship_400_12: -442031375
+      pirate_ship_400_13: 763239354
+      pirate_ship_400_14: -581170170
+      pirate_ship_400_15: -2027979418
+      pirate_ship_400_16: -1779726628
+      pirate_ship_400_17: -842566697
+      pirate_ship_400_18: -1756316742
+      pirate_ship_400_19: -1322414345
+      pirate_ship_400_2: -1513067828
+      pirate_ship_400_20: 534193801
+      pirate_ship_400_21: 248837004
+      pirate_ship_400_22: -640278397
+      pirate_ship_400_23: 1435390131
+      pirate_ship_400_24: -1426362165
+      pirate_ship_400_25: -584662167
+      pirate_ship_400_26: 1026764611
+      pirate_ship_400_27: 1842412041
+      pirate_ship_400_28: -1789181622
+      pirate_ship_400_29: -1037853767
+      pirate_ship_400_3: 644075934
+      pirate_ship_400_4: 450823932
+      pirate_ship_400_5: 2098652960
+      pirate_ship_400_6: -106660832
+      pirate_ship_400_7: 1824889894
+      pirate_ship_400_8: 1216413458
+      pirate_ship_400_9: 1539568111
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
