@@ -24,7 +24,6 @@ public class ItemLogic : MonoBehaviour {
 		rb.velocity = Vector2.right * speed;
 
 		int rand = Random.Range(0, icons.Count );
-		Debug.Log("so many " + icons.Count);
 		GetComponent<SpriteRenderer>().sprite = icons[rand];
 	}
 	

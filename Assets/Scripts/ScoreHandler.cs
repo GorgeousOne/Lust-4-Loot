@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -7,6 +8,8 @@ public class ScoreHandler : MonoBehaviour {
 
 	//ui slider to display the score
 	public Slider scoreSlider;
+	public Canvas canvas;
+	public GameObject scorePrefab;
 	
 	public int scoreRange = 50;
 	public float currentScore;
@@ -48,16 +51,27 @@ public class ScoreHandler : MonoBehaviour {
 	}
 	
 	public void AddPoints(float points, bool isPlayer1) {
-		if (points >= 3) {
-			float multiplier = (points - 2) * 0.5f;
+		if (points > 2) {
+			float multiplier = 1 + 0.5f * (points - 1);
 			points *= multiplier;
 		}
 		currentScore += isPlayer1 ? points : -points;
 		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
 		
 		if (points != 0) {
+			DisplayPoints((int) points, isPlayer1);
 			ChangePos();
 		}
+	}
+
+	private void DisplayPoints(int points, bool isPlayer1) {
+		// Vector2 textPos = Camera.main.WorldToScreenPoint(transform.position);
+		Vector2 textPos = transform.position;
+		textPos += (isPlayer1 ? Vector2.left : Vector2.right) + Vector2.up * 0.5f;
+		GameObject scoreText = Instantiate(scorePrefab, textPos, Quaternion.identity, canvas.transform);
+		TextMeshProUGUI text = scoreText.GetComponent<TextMeshProUGUI>(); 
+		text.text = "+" + points;
+		text.color = isPlayer1 ? Color.red : Color.green;
 	}
 
 	private void ChangePos() {

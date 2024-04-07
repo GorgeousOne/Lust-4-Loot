@@ -717,6 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreSlider: {fileID: 2012944690}
+  canvas: {fileID: 1447768764}
+  scorePrefab: {fileID: 3888260951824441553, guid: e54ed4b56cc71ff479a3eed4eeaccf9f, type: 3}
   scoreRange: 50
   currentScore: 0
   moveTime: 1
