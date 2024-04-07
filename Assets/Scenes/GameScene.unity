@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LootSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 7640908351883861436, guid: d0c88eab13cba8d42871d81f64a77b00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7640908351883861438, guid: d0c88eab13cba8d42871d81f64a77b00, type: 3}
       propertyPath: spawnInterval
       value: 4
@@ -1154,7 +1158,8 @@ MonoBehaviour:
   scoreSlider: {fileID: 2012944690}
   scorePrefab: {fileID: 3888260951824441553, guid: e54ed4b56cc71ff479a3eed4eeaccf9f, type: 3}
   winnerText: {fileID: 1363102896}
-  scoreRange: 50
+  itemSpawner: {fileID: 0}
+  scoreRange: 20
   currentScore: 0
   moveTime: 1
   moveRange: 3
@@ -1888,6 +1893,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1387458727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7640908351883861436, guid: d0c88eab13cba8d42871d81f64a77b00, type: 3}
+  m_PrefabInstance: {fileID: 256494681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1394912035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,6 +2474,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1858255373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9194305447145649582, guid: 54038571cb397174eb0a23c2b5e40ff2, type: 3}
+  m_PrefabInstance: {fileID: 4472010321841731584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1918897199
 GameObject:
   m_ObjectHideFlags: 0

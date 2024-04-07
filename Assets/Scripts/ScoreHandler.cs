@@ -13,6 +13,7 @@ public class ScoreHandler : MonoBehaviour {
 	public Slider scoreSlider;
 	public GameObject scorePrefab;
 	public TMP_Text winnerText;
+	public GameObject itemSpawner;
 	
 	public int scoreRange = 50;
 	public float currentScore;
@@ -49,10 +50,8 @@ public class ScoreHandler : MonoBehaviour {
 		player.UnloadItems(transform);
 		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
 		
-		if (currentScore >= scoreRange) {
-			Debug.Log("Player 1 wins!");
-		} else if (currentScore <= -scoreRange) {
-			Debug.Log("Player 2 wins!");
+		if (Mathf.Abs(currentScore) >= scoreRange) {
+			AnnounceWinner(currentScore > 0);
 		}
 	}
 	
@@ -83,6 +82,7 @@ public class ScoreHandler : MonoBehaviour {
 	private void AnnounceWinner(bool isPlayer1) {
 		winnerText.text = isPlayer1 ? "Player 1 wins!" : "Player 2 wins!";
 		winnerText.color = isPlayer1 ? Color.red : Color.green;
+		winnerText.gameObject.SetActive(true);
 		menuCanvas.gameObject.SetActive(true);
 		
 		//disable all movements
@@ -90,10 +90,11 @@ public class ScoreHandler : MonoBehaviour {
 		foreach (PlayerMovement player in players) {
 			player.enabled = false;
 		}
-		
 		//reset score
 		currentScore = 0;
-		scoreSlider.value = 0;
+		scoreSlider.value = 0.5f;
+		scoreSlider.gameObject.SetActive(false);
+		gameObject.SetActive(false);
 	}
 	
 	private void ChangePos() {
