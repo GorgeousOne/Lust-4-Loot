@@ -7,9 +7,12 @@ using Random = UnityEngine.Random;
 public class ScoreHandler : MonoBehaviour {
 
 	//ui slider to display the score
+	public Canvas ingameCanvas;
+	public Canvas menuCanvas;
+	
 	public Slider scoreSlider;
-	public Canvas canvas;
 	public GameObject scorePrefab;
+	public TMP_Text winnerText;
 	
 	public int scoreRange = 50;
 	public float currentScore;
@@ -65,20 +68,36 @@ public class ScoreHandler : MonoBehaviour {
 	}
 
 	private void DisplayPoints(int points, bool isPlayer1) {
-		// Vector2 textPos = Camera.main.WorldToScreenPoint(transform.position);
 		Vector2 textPos = transform.position;
 		textPos += (isPlayer1 ? Vector2.left : Vector2.right) + Vector2.up * 0.5f;
-		GameObject scoreText = Instantiate(scorePrefab, textPos, Quaternion.identity, canvas.transform);
-		TextMeshProUGUI text = scoreText.GetComponent<TextMeshProUGUI>(); 
+		GameObject scoreText = Instantiate(scorePrefab, textPos, Quaternion.identity, ingameCanvas.transform);
+		TMP_Text text = scoreText.GetComponent<TMP_Text>(); 
 		text.text = "+" + points;
 		text.color = isPlayer1 ? Color.red : Color.green;
 	}
-
+	
+	private void AnnounceWinner(bool isPlayer1) {
+		winnerText.text = isPlayer1 ? "Player 1 wins!" : "Player 2 wins!";
+		winnerText.color = isPlayer1 ? Color.red : Color.green;
+		menuCanvas.gameObject.SetActive(true);
+		
+		//disable all movements
+		PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
+		foreach (PlayerMovement player in players) {
+			player.enabled = false;
+		}
+		
+		//reset score
+		currentScore = 0;
+		scoreSlider.value = 0;
+	}
+	
 	private void ChangePos() {
 		moveStartTime = Time.time;
 		moveStartPos = transform.position;
 		moveTargetPos = new Vector2(moveStartPos.x, Random.Range(-moveRange, moveRange));
 	}
+	
 	/**
 	 * Remap a value from a range [min, max] to another range [min2, max2]
 	 */
