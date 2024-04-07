@@ -524,6 +524,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &275371033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6440674659555559022, guid: fa28a71a99ff67b469cfca6238c0ec45, type: 3}
+  m_PrefabInstance: {fileID: 3141627257994531572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &308230143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2396,9 @@ MonoBehaviour:
   menuCanvas: {fileID: 378472243}
   scoreSlider: {fileID: 2012944688}
   island: {fileID: 963877482}
+  itemSpawner: {fileID: 1387458727}
+  player1: {fileID: 275371033}
+  player2: {fileID: 1858255373}
 --- !u!1 &1802039710
 GameObject:
   m_ObjectHideFlags: 0
