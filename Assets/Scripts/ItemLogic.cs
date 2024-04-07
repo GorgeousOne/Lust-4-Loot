@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Random = UnityEngine.Random;
-using Vector2 = UnityEngine.Vector2;
 using System.Collections.Generic;
 
 public class ItemLogic : MonoBehaviour {
