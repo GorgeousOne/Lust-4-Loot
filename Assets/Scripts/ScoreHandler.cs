@@ -1,7 +1,8 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 public class ScoreHandler : MonoBehaviour {
 
 	//ui slider to display the score
@@ -9,6 +10,21 @@ public class ScoreHandler : MonoBehaviour {
 	
 	public int scoreRange = 50;
 	public float currentScore;
+	
+	public float moveTime = 1f;
+	public float moveRange = 3f;
+	
+	private float moveStartTime;
+	private Vector2 moveStartPos;
+	private Vector2 moveTargetPos;
+	
+	private void Update() {
+		if (Time.time <= moveStartTime + moveTime) {
+			float moveProgress = (Time.time - moveStartTime) / moveTime;
+			float smooth = 1 - Mathf.Pow(1 - moveProgress, 3);
+			transform.position = Vector2.Lerp(moveStartPos, moveTargetPos, smooth);
+		}
+	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		bool isPlayer1 = true;
@@ -21,7 +37,7 @@ public class ScoreHandler : MonoBehaviour {
 		}
 		PlayerCollision player = other.gameObject.GetComponent<PlayerCollision>();
 		AddPoints(player.GetItemCount(), isPlayer1);
-		player.UnloadItems(transform.position);
+		player.UnloadItems(transform);
 		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
 		
 		if (currentScore >= scoreRange) {
@@ -36,11 +52,18 @@ public class ScoreHandler : MonoBehaviour {
 			float multiplier = (points - 2) * 0.5f;
 			points *= multiplier;
 		}
-		if (!isPlayer1) {
-			points *= -1;
-		}
-		currentScore += points;
+		currentScore += isPlayer1 ? points : -points;
 		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
+		
+		if (points != 0) {
+			ChangePos();
+		}
+	}
+
+	private void ChangePos() {
+		moveStartTime = Time.time;
+		moveStartPos = transform.position;
+		moveTargetPos = new Vector2(moveStartPos.x, Random.Range(-moveRange, moveRange));
 	}
 	/**
 	 * Remap a value from a range [min, max] to another range [min2, max2]

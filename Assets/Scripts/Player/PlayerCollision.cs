@@ -41,7 +41,7 @@ public class PlayerCollision : MonoBehaviour {
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 
-	public void UnloadItems(Vector2 target) {
+	public void UnloadItems(Transform target) {
 		foreach (GameObject item in hoardedItems) {
 			item.GetComponent<ItemLogic>().Unload(target);
 		}

@@ -13,7 +13,7 @@ public class ItemLogic : MonoBehaviour {
 	public UnityEvent<GameObject> onCannonBallHit;
 	private Rigidbody2D rb;
 	private Vector2 unloadStart;
-	private Vector2 unloadTarget;
+	private Transform unloadTarget;
 	private float unloadStartTime;
 	
 	private void OnEnable() {
@@ -25,11 +25,11 @@ public class ItemLogic : MonoBehaviour {
 		if (unloadStartTime != 0) {
 			float unloadProgress = (Time.time - unloadStartTime) / unloadTime;
 			float smooth = 1 - Mathf.Pow(1 - unloadProgress, 3);
-			transform.position = Vector2.Lerp(unloadStart, unloadTarget, smooth);
+			transform.position = Vector2.Lerp(unloadStart, unloadTarget.position, smooth);
 		}
 	}
 
-	public void Unload(Vector2 target) {
+	public void Unload(Transform target) {
 		unloadStartTime = Time.time;
 		unloadTarget = target;
 		unloadStart = transform.position;
