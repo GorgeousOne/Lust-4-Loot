@@ -10,8 +10,12 @@ public class PlayerCollision : MonoBehaviour {
 	public Vector2 stackOffset = Vector2.zero;
 	public float stackDist = .2f;
 	public UnityEvent<int> onItemsChanged;
-	
+	public AudioSource soundOnHit;
 	private List<GameObject> hoardedItems = new();
+
+	void start (){
+	}
+
 	
 	private void Update() {
 		for (int i = 0; i < hoardedItems.Count; i++) {
@@ -50,6 +54,7 @@ public class PlayerCollision : MonoBehaviour {
 	}
 	
 	private void TakeDamage() {
+		soundOnHit.Play();
 		foreach (GameObject item in hoardedItems) {
 			item.GetComponent<ItemLogic>().Drop();
 		}
