@@ -56,10 +56,11 @@ public class ScoreHandler : MonoBehaviour {
 	}
 	
 	public void AddPoints(float points, bool isPlayer1) {
-		if (points > 2) {
+		if (points > 1) {
 			float multiplier = 1 + 0.5f * (points - 1);
-			points *= multiplier;
+            points *= multiplier;
 		}
+		
 		currentScore += isPlayer1 ? points : -points;
 		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
 		
