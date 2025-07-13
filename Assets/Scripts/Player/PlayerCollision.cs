@@ -12,7 +12,8 @@ public class PlayerCollision : MonoBehaviour {
 	public AudioSource pickUpLoot;
 	private List<GameObject> hoardedItems = new();
 
-	void start (){
+	void Start() {
+		GameManager.Singleton.OnGameStart.AddListener(TakeDamage);	
 	}
 
 	
@@ -26,7 +27,7 @@ public class PlayerCollision : MonoBehaviour {
 			hoardedItems[i].transform.position = transform.position + itemPos;
 		}
 	}
-	
+
 	public int GetItemCount() {
 		return hoardedItems.Count;
 	}
@@ -34,7 +35,7 @@ public class PlayerCollision : MonoBehaviour {
 	private void PickupItem(GameObject item) {
 		item.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Front";
 		Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
-		rb.velocity = Vector2.zero;
+		rb.linearVelocity = Vector2.zero;
 		item.transform.parent = transform;
 		item.layer = LayerMask.NameToLayer("Hoarded" + playerNumber);
 		ItemLogic itemLogic = item.GetComponent<ItemLogic>();

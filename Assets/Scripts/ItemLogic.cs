@@ -20,7 +20,7 @@ public class ItemLogic : MonoBehaviour {
 	
 	private void OnEnable() {
 		rb = GetComponent<Rigidbody2D>();
-		rb.velocity = Vector2.right * speed;
+		rb.linearVelocity = Vector2.right * speed;
 
 		int rand = Random.Range(0, icons.Count );
 		GetComponent<SpriteRenderer>().sprite = icons[rand];
@@ -44,7 +44,7 @@ public class ItemLogic : MonoBehaviour {
 
 	public void Drop() {
 		rb.gravityScale = 3;
-		rb.velocity = new Vector2(Random.Range(-fallVel, fallVel), bounceVel);
+		rb.linearVelocity = new Vector2(Random.Range(-fallVel, fallVel), bounceVel);
 
 		transform.parent = null;
 		Destroy(GetComponent<Collider2D>());

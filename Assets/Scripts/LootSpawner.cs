@@ -29,6 +29,6 @@ public class LootSpawner : MonoBehaviour
         GameObject loot = Instantiate(collectablePrefab, transform.position + spawnOff, Quaternion.identity);
 
         GameObject loot2 = Instantiate(collectablePrefab, transform.position - spawnOff, Quaternion.identity);
-        loot2.GetComponent<Rigidbody2D>().velocity *= -1;
+        loot2.GetComponent<Rigidbody2D>().linearVelocity *= -1;
     }
 }
