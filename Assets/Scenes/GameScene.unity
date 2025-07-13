@@ -226,18 +226,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingameCanvas: {fileID: 1447768764}
-  menuCanvas: {fileID: 378472243}
   tugOfWarMeter: {fileID: 2012944690}
   countdownText: {fileID: 669864284}
   scorePrefab: {fileID: 3888260951824441553, guid: e54ed4b56cc71ff479a3eed4eeaccf9f, type: 3}
   winnerText: {fileID: 1363102896}
   itemSpawner: {fileID: 0}
-  gameDuration: 10
+  gameDuration: 90
   scoreRange: 20
   soundOnCashOut: {fileID: 308230145}
   endGame: {fileID: 537399480}
-  currentScore: 0
   islandMove: {fileID: 963877487}
+  currentScore: 0
 --- !u!1 &174317847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,8 +2404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400.00003, y: -249.88036}
-  m_SizeDelta: {x: 380.963, y: 50}
+  m_AnchoredPosition: {x: 959.66473, y: -737.6886}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1363102896
 MonoBehaviour:
@@ -2455,8 +2454,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2477,7 +2476,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 6e72656b
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1

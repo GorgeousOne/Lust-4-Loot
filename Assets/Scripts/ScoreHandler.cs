@@ -7,33 +7,33 @@ using Random = UnityEngine.Random;
 public class ScoreHandler : MonoBehaviour {
 
 	//ui slider to display the score
-	public Canvas ingameCanvas;
-	public Canvas menuCanvas;
+	[SerializeField] private Canvas ingameCanvas;
 	
-	public Slider tugOfWarMeter;
-	public TMP_Text countdownText;
-	public GameObject scorePrefab;
-	public TMP_Text winnerText;
-	public GameObject itemSpawner;
+	[SerializeField] private Slider tugOfWarMeter;
+	[SerializeField] private TMP_Text countdownText;
+	[SerializeField] private GameObject scorePrefab;
+	[SerializeField] private TMP_Text winnerText;
+	[SerializeField] private GameObject itemSpawner;
 
-	public int gameDuration = 90;
-	public int scoreRange = 50;
+	[SerializeField] private int gameDuration = 90;
+	[SerializeField] private int scoreRange = 50;
 	
-	public AudioSource soundOnCashOut;
-	public AudioSource endGame;
+	[SerializeField] private AudioSource soundOnCashOut;
+	[SerializeField] private AudioSource endGame;
+	[SerializeField] private IslandLogic islandMove;
 
 
 	public float currentScore;
 	private float remainingTime;
 
-	public IslandLogic islandMove;
-
 
 	void Start() {
 		Debug.Log("wass goin on " + GameManager.Singleton);
-		GameManager.Singleton.OnGameStart.AddListener(SetupScores);
-		GameManager.Singleton.OnGameEnd.AddListener(HideScores);
+		GameManager.Singleton.OnGameStart.AddListener(SetupIngameUi);
+		GameManager.Singleton.OnGameEnd.AddListener(HideInGameUI);
 		islandMove.OnLootDeliver.AddListener(OnLootDeliver);
+
+		HideInGameUI();
     }
 
 	void Update() {
@@ -50,22 +50,21 @@ public class ScoreHandler : MonoBehaviour {
 		UpdateTimer();
     }
 
-	public void SetupScores() {
-		tugOfWarMeter.gameObject.SetActive(true);
+	public void SetupIngameUi() {
 		islandMove.gameObject.SetActive(true);
+		ingameCanvas.gameObject.SetActive(true);
 
-
-		Debug.Log("AYO ANYONE HOME?");
 		currentScore = 0;
 		tugOfWarMeter.value = 0.5f;
 		remainingTime = gameDuration;
+
 		UpdateTimer();
 	}
 
-	private void HideScores() {
-		tugOfWarMeter.gameObject.SetActive(false);
+	private void HideInGameUI() {
+		//TODO game ui activate true
+		ingameCanvas.gameObject.SetActive(false);
 		islandMove.gameObject.SetActive(false);
-
 	}
 
 	private void UpdateTimer() {
@@ -83,17 +82,22 @@ public class ScoreHandler : MonoBehaviour {
 
 	private void OnLootDeliver(int numItems) {
 		AddPoints(Mathf.Abs(numItems), numItems > 0);
-		tugOfWarMeter.value = Mathf.InverseLerp(-scoreRange, scoreRange, currentScore);
 
 		if (Mathf.Abs(currentScore) >= scoreRange) {
 			AnnounceWinner(GetWinnerIdx());
 		}
 	}
 
-	public void AddPoints(int points, bool isPlayer1) {
+	public void AddPoints(int items, bool isPlayer1) {
 		//apparently this is a triangular number progression
 		//1>1, 2>3, 3>6, 4>10, 5>15, 6>21, 7>28
-		points = (points * (points + 1)) / 2;
+		// points = (points * (points + 1)) / 2;
+
+		//1>1, 2>3, 3>6, 4>9, 5>12, 6>15, 7>18
+		int points = items;
+		if (points > 1) {
+			points = 3 * points - 3;
+		}
 
 		currentScore += isPlayer1 ? points : -points;
 		tugOfWarMeter.value = Mathf.InverseLerp(-scoreRange, scoreRange, currentScore);
@@ -125,12 +129,7 @@ public class ScoreHandler : MonoBehaviour {
 			winnerText.color = Color.blue;
 		}
 		winnerText.gameObject.SetActive(true);
-		menuCanvas.gameObject.SetActive(true);
-
 		//reset score
-		tugOfWarMeter.gameObject.SetActive(false);
-		countdownText.gameObject.SetActive(false);
-		gameObject.SetActive(false);
 		GameManager.Singleton.EndGame();
 	}	
 }

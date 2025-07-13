@@ -12,7 +12,8 @@ public class PlayerCollision : MonoBehaviour {
 	public AudioSource pickUpLoot;
 	private List<GameObject> hoardedItems = new();
 
-	void start (){
+	void Start() {
+		GameManager.Singleton.OnGameStart.AddListener(TakeDamage);	
 	}
 
 	
@@ -26,7 +27,7 @@ public class PlayerCollision : MonoBehaviour {
 			hoardedItems[i].transform.position = transform.position + itemPos;
 		}
 	}
-	
+
 	public int GetItemCount() {
 		return hoardedItems.Count;
 	}

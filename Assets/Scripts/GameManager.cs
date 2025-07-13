@@ -20,7 +20,12 @@ public class GameManager : MonoBehaviour {
 		Singleton = this;
 	}
 
-	public void StartGame() {
+    void Start() {
+		//just in case
+		menuCanvas.gameObject.SetActive(true);   
+    }
+
+    public void StartGame() {
 		startGame.Play();
 
 		//hide the menu on start button press
@@ -30,28 +35,14 @@ public class GameManager : MonoBehaviour {
 		player1.transform.position = new Vector3(-7, 0, 0);
 		player2.transform.position = new Vector3(7, 0, 0);
 
-		//find all PlayerMovement scripts and enable them
-		PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
-		foreach (PlayerMovement player in players) {
-			player.enabled = true;
-		}
-		PlayerCollision[] players1 = FindObjectsOfType<PlayerCollision>();
-		foreach (PlayerCollision player1 in players1) {
-			player1.TakeDamage();
-		}
-
 		IsGameRunning = true;
 		OnGameStart.Invoke();
 	}
 
-	public void EndGame() {
-		//disable all movements
-		PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
-		foreach (PlayerMovement player in players) {
-			player.enabled = false;
-		}
-		
+	public void EndGame() {		
 		IsGameRunning = false;
+		menuCanvas.gameObject.SetActive(true);
+		itemSpawner.SetActive(false);
 		OnGameEnd.Invoke();
 	}
 }

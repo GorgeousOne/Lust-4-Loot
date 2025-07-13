@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124000201339863111}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.86, y: -1.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6026919258544251610}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &7689736434556439842
 AudioSource:
@@ -43,6 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 56a84b31a1e0ee24696d2ed54b19674b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 56a84b31a1e0ee24696d2ed54b19674b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.7
   m_Pitch: 1
@@ -152,13 +153,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2894517604949829238}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.86, y: -1.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6026919258544251610}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &8787755830601051520
 AudioSource:
@@ -171,6 +172,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e3dd820862223b84e95a636c0ded782e, type: 3}
+  m_Resource: {fileID: 8300000, guid: e3dd820862223b84e95a636c0ded782e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -280,13 +282,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3661113941721050939}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6026919258544251610}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &7879309268161931584
 AudioSource:
@@ -299,6 +301,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 213c6b7813190234e80860cffd589176, type: 3}
+  m_Resource: {fileID: 8300000, guid: 213c6b7813190234e80860cffd589176, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -409,13 +412,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026919258165776003}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6026919258544251610}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6026919258165776061
 SpriteRenderer:
@@ -434,6 +437,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -471,7 +477,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &5564221820629378459
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -485,6 +491,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -518,6 +525,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026919258544251609}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.86, y: -2.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -528,7 +536,6 @@ Transform:
   - {fileID: 2805231465400005596}
   - {fileID: 6415111372804154478}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3674021070452980416
 MonoBehaviour:
@@ -558,43 +565,43 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 6129f9f7-50b6-4e02-ac9c-ad3a4f39faec
-    m_ActionName: Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]
+    m_ActionName: 'Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 7887f8d1-f0bc-4bcc-843e-2d71017ac79d
-    m_ActionName: Player1/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]
+    m_ActionName: 'Player1/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 4e2da69e-dda0-4072-9993-5661233598d9
-    m_ActionName: Player1/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]
+    m_ActionName: 'Player1/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 26b1b899-9331-44f9-b332-fead2f50c579
-    m_ActionName: Player1/Menu[/Keyboard/escape,/XInputControllerWindows/start]
+    m_ActionName: 'Player1/Menu[/Keyboard/escape,/XInputControllerWindows/start]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 558a7666-e9be-40e1-8ae7-b8f566187521
-    m_ActionName: Player1/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+    m_ActionName: 'Player1/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 29cd19a1-3979-4444-b508-455f43d1f712
-    m_ActionName: Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]
+    m_ActionName: 'Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: ba0a79c9-bb02-4ab5-80ce-c6acf75f5c64
-    m_ActionName: Player2/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]
+    m_ActionName: 'Player2/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 2e8a1171-6eb2-4ff6-a82b-68c26e19d76e
-    m_ActionName: Player2/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]
+    m_ActionName: 'Player2/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: fd7f222c-743a-448d-8293-659f58826b18
-    m_ActionName: Player2/Menu[/Keyboard/escape,/XInputControllerWindows/start]
+    m_ActionName: 'Player2/Menu[/Keyboard/escape,/XInputControllerWindows/start]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 1391a7c2-bf84-45fb-9381-bede6baf11b4
-    m_ActionName: Player2/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+    m_ActionName: 'Player2/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1
@@ -607,7 +614,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026919258544251609}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa24ca6010a9ed842bf4a76ca9eecee1, type: 3}
   m_Name: 
@@ -641,7 +648,7 @@ MonoBehaviour:
   pickUpLoot: {fileID: 7689736434556439842}
 --- !u!50 &6026919258544251605
 Rigidbody2D:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -652,10 +659,16 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -668,11 +681,32 @@ CapsuleCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6026919258544251609}
   m_Enabled: 1
+  serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.43}
   m_Size: {x: 1.5, y: 0.5}
   m_Direction: 1
