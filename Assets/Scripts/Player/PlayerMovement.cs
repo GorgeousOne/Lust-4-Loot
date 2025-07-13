@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour {
 		bullet.layer = LayerMask.NameToLayer("Bullet" + playerNumber);
 		
 		Rigidbody2D billetRb = bullet.GetComponent<Rigidbody2D>();
-		billetRb.velocity = Vector2.right * bulletSpeed * playerFacing;
+		billetRb.linearVelocity = Vector2.right * bulletSpeed * playerFacing;
 		fireSound.Play();
 	}
 
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		rb.velocity = inputVel * currentSpeed;
+		rb.linearVelocity = inputVel * currentSpeed;
 	}
 	
 	private void OnItemsChanged(int count) {

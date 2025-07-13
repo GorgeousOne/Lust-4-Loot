@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -9,64 +10,97 @@ public class ScoreHandler : MonoBehaviour {
 	public Canvas ingameCanvas;
 	public Canvas menuCanvas;
 	
-	public Slider scoreSlider;
+	public Slider tugOfWarMeter;
+	public TMP_Text countdownText;
 	public GameObject scorePrefab;
 	public TMP_Text winnerText;
 	public GameObject itemSpawner;
-	
-	public int scoreRange = 50;
-	public float currentScore;
-	
-	public float moveTime = 1f;
-	public float moveRange = 3f;
 
+	public int gameDuration = 90;
+	public int scoreRange = 50;
+	
 	public AudioSource soundOnCashOut;
 	public AudioSource endGame;
-	
-	private float moveStartTime;
-	private Vector2 moveStartPos;
-	private Vector2 moveTargetPos;
 
-	
-	private void Update() {
-		if (Time.time <= moveStartTime + moveTime) {
-			float moveProgress = (Time.time - moveStartTime) / moveTime;
-			float smooth = 1 - Mathf.Pow(1 - moveProgress, 3);
-			transform.position = Vector2.Lerp(moveStartPos, moveTargetPos, smooth);
-		}
-	}
 
-	private void OnTriggerEnter2D(Collider2D other) {
-		bool isPlayer1 = true;
-		
-		if (other.gameObject.CompareTag("Player2")) {
-			isPlayer1 = false;
-		}
-		else if (!other.gameObject.CompareTag("Player1")){
+	public float currentScore;
+	private float remainingTime;
+
+	public IslandLogic islandMove;
+
+
+	void Start() {
+		Debug.Log("wass goin on " + GameManager.Singleton);
+		GameManager.Singleton.OnGameStart.AddListener(SetupScores);
+		GameManager.Singleton.OnGameEnd.AddListener(HideScores);
+		islandMove.OnLootDeliver.AddListener(OnLootDeliver);
+    }
+
+	void Update() {
+		if (!GameManager.Singleton.IsGameRunning) {
 			return;
 		}
-		PlayerCollision player = other.gameObject.GetComponent<PlayerCollision>();
-		AddPoints(player.GetItemCount(), isPlayer1);
-		player.UnloadItems(transform);
-		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
-		
+
+		if (remainingTime < 0) {
+			countdownText.text = "0:00";
+			AnnounceWinner(GetWinnerIdx());
+			return;
+		}
+		remainingTime -= Time.deltaTime;
+		UpdateTimer();
+    }
+
+	public void SetupScores() {
+		tugOfWarMeter.gameObject.SetActive(true);
+		islandMove.gameObject.SetActive(true);
+
+
+		Debug.Log("AYO ANYONE HOME?");
+		currentScore = 0;
+		tugOfWarMeter.value = 0.5f;
+		remainingTime = gameDuration;
+		UpdateTimer();
+	}
+
+	private void HideScores() {
+		tugOfWarMeter.gameObject.SetActive(false);
+		islandMove.gameObject.SetActive(false);
+
+	}
+
+	private void UpdateTimer() {
+		int minutes = Mathf.FloorToInt(remainingTime / 60);
+		int seconds = Mathf.FloorToInt(remainingTime % 60);
+		countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+	}
+
+	private int GetWinnerIdx() {
+		if (currentScore == 0) {
+			return 0;
+		}
+		return currentScore > 0 ? 1 : 2;
+	}
+
+	private void OnLootDeliver(int numItems) {
+		AddPoints(Mathf.Abs(numItems), numItems > 0);
+		tugOfWarMeter.value = Mathf.InverseLerp(-scoreRange, scoreRange, currentScore);
+
 		if (Mathf.Abs(currentScore) >= scoreRange) {
-			AnnounceWinner(currentScore > 0);
+			AnnounceWinner(GetWinnerIdx());
 		}
 	}
-	
-	public void AddPoints(float points, bool isPlayer1) {
-		if (points > 1) {
-			float multiplier = 1 + 0.5f * (points - 1);
-            points *= multiplier;
-		}
-		
+
+	public void AddPoints(int points, bool isPlayer1) {
+		//apparently this is a triangular number progression
+		//1>1, 2>3, 3>6, 4>10, 5>15, 6>21, 7>28
+		points = (points * (points + 1)) / 2;
+
 		currentScore += isPlayer1 ? points : -points;
-		scoreSlider.value = Remap(currentScore, -scoreRange, scoreRange, 0, 1);
-		
+		tugOfWarMeter.value = Mathf.InverseLerp(-scoreRange, scoreRange, currentScore);
+
 		if (points != 0) {
-			DisplayPoints((int) points, isPlayer1);
-			ChangePos();
+			DisplayPoints(points, isPlayer1);
+			islandMove.ChangePosRng();
 			soundOnCashOut.Play();
 		}
 	}
@@ -79,37 +113,24 @@ public class ScoreHandler : MonoBehaviour {
 		text.text = "+" + points;
 		text.color = isPlayer1 ? Color.red : Color.green;
 	}
-	
-	private void AnnounceWinner(bool isPlayer1) {
+
+	private void AnnounceWinner(int playerIdx) {
 		endGame.Play();
-		winnerText.text = isPlayer1 ? "Player 1 wins!" : "Player 2 wins!";
-		winnerText.color = isPlayer1 ? Color.red : Color.green;
+
+		if (playerIdx == 1 || playerIdx == 2) {
+			winnerText.text = playerIdx == 1 ? "Player 1 wins!" : "Player 2 wins!";
+			winnerText.color = playerIdx == 1 ? Color.red : Color.green;
+		} else {
+			winnerText.text = "It's a Draw!";
+			winnerText.color = Color.blue;
+		}
 		winnerText.gameObject.SetActive(true);
 		menuCanvas.gameObject.SetActive(true);
-		
-		//disable all movements
-		PlayerMovement[] players = FindObjectsOfType<PlayerMovement>();
-		foreach (PlayerMovement player in players) {
-			player.enabled = false;
-		}
+
 		//reset score
-		currentScore = 0;
-		scoreSlider.value = 0.5f;
-		scoreSlider.gameObject.SetActive(false);
+		tugOfWarMeter.gameObject.SetActive(false);
+		countdownText.gameObject.SetActive(false);
 		gameObject.SetActive(false);
-	}
-	
-	private void ChangePos() {
-		moveStartTime = Time.time;
-		moveStartPos = transform.position;
-		moveTargetPos = new Vector2(moveStartPos.x, Random.Range(-moveRange, moveRange));
-	}
-	
-	/**
-	 * Remap a value from a range [min, max] to another range [min2, max2]
-	 */
-	private static float Remap(float x, float min, float max, float min2, float max2) {
-		return (x - min) / (max - min) * (max2 - min2) + min2;
-	}
-	
+		GameManager.Singleton.EndGame();
+	}	
 }
