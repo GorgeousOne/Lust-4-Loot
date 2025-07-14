@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3233494976229287471, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
@@ -127,9 +128,25 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3757401417304791001, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.50980395
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757401417304791001, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.83921576
+      objectReference: {fileID: 0}
+    - target: {fileID: 3757401417304791001, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.41960788
+      objectReference: {fileID: 0}
     - target: {fileID: 6026919258165776003, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6026919258165776061, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6026919258165776061, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: m_Color.b
@@ -215,7 +232,14 @@ PrefabInstance:
       propertyPath: actionMapName
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 6060855044541343411, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0458
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
 --- !u!114 &9194305447145649580 stripped
 MonoBehaviour:
