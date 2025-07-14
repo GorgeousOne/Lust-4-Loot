@@ -40,7 +40,7 @@ public class IslandLogic : MonoBehaviour {
 
 		if (other.gameObject.CompareTag("Player1")) {
 			OnLootDeliver.Invoke(itemCount);
-		} else if (!other.gameObject.CompareTag("Player2")) {
+		} else {
 			OnLootDeliver.Invoke(-itemCount);
 		}
 		player.UnloadItems(transform);

@@ -28,7 +28,6 @@ public class ScoreHandler : MonoBehaviour {
 
 
 	void Start() {
-		Debug.Log("wass goin on " + GameManager.Singleton);
 		GameManager.Singleton.OnGameStart.AddListener(SetupIngameUi);
 		GameManager.Singleton.OnGameEnd.AddListener(HideInGameUI);
 		islandMove.OnLootDeliver.AddListener(OnLootDeliver);
@@ -88,13 +87,10 @@ public class ScoreHandler : MonoBehaviour {
 		}
 	}
 
-	public void AddPoints(int items, bool isPlayer1) {
-		//apparently this is a triangular number progression
-		//1>1, 2>3, 3>6, 4>10, 5>15, 6>21, 7>28
-		// points = (points * (points + 1)) / 2;
-
+	public void AddPoints(int numItems, bool isPlayer1) {
+		Debug.Log(numItems);
+		int points = numItems;
 		//1>1, 2>3, 3>6, 4>9, 5>12, 6>15, 7>18
-		int points = items;
 		if (points > 1) {
 			points = 3 * points - 3;
 		}
