@@ -277,15 +277,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce39160738ef5054284ebd1f3c7482ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuCanvas: {fileID: 378472243}
+  titleCanvas: {fileID: 378472243}
+  pauseCanvas: {fileID: 972278817}
   itemSpawner: {fileID: 1387458727}
   player1: {fileID: 275371033}
   player2: {fileID: 1858255373}
+  inputActions: {fileID: -944628639613478452, guid: d4551528279750440ad332ea5f7867c1, type: 3}
   startGame: {fileID: 548214404}
   OnGameStart:
     m_PersistentCalls:
       m_Calls: []
-  OnGameEnd:
+  OnGameOver:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &142426082
@@ -5001,8 +5003,8 @@ SceneRoots:
   - {fileID: 4472010321841731584}
   - {fileID: 256494681}
   - {fileID: 963877486}
-  - {fileID: 1447768765}
   - {fileID: 378472244}
+  - {fileID: 1447768765}
   - {fileID: 972278818}
   - {fileID: 1394912038}
   - {fileID: 1802039711}

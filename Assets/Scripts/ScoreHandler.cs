@@ -29,23 +29,23 @@ public class ScoreHandler : MonoBehaviour {
 
 	void Start() {
 		GameManager.Singleton.OnGameStart.AddListener(SetupIngameUi);
-		GameManager.Singleton.OnGameEnd.AddListener(HideInGameUI);
+		GameManager.Singleton.OnGameOver.AddListener(HideInGameUI);
 		islandMove.OnLootDeliver.AddListener(OnLootDeliver);
 
 		HideInGameUI();
     }
 
 	void Update() {
-		if (!GameManager.Singleton.IsGameRunning) {
+		if (GameManager.Singleton.IsGameOver || GameManager.Singleton.IsGamePaused) {
 			return;
 		}
+		remainingTime -= Time.deltaTime;
 
 		if (remainingTime < 0) {
 			countdownText.text = "0:00";
 			AnnounceWinner(GetWinnerIdx());
 			return;
 		}
-		remainingTime -= Time.deltaTime;
 		UpdateTimer();
     }
 

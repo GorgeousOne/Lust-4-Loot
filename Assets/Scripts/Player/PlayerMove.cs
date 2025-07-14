@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	public void OnShoot() {
-		if (!GameManager.Singleton.IsGameRunning) {
+		if (GameManager.Singleton.IsGameOver || GameManager.Singleton.IsGamePaused) {
 			return;
 		}
 		if (Time.time < lastShootTime + reloadTime) {
@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	public void OnMove(InputAction.CallbackContext context) {
-		if (!GameManager.Singleton.IsGameRunning) {
+		if (GameManager.Singleton.IsGameOver || GameManager.Singleton.IsGamePaused) {
 			return;
 		}
 		inputVel = context.ReadValue<Vector2>();
