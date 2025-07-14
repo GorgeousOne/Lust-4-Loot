@@ -1,48 +1,53 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
 
-	public static GameManager Singleton { get; private set; }
+	public static GameManager Instance { get; private set; }
 
-	public Canvas menuCanvas;
-	public GameObject itemSpawner;
-	public GameObject player1;
-	public GameObject player2;
-	public AudioSource startGame;
+	[SerializeField] private GameObject itemSpawner;
+	[SerializeField] private GameObject player1;
+	[SerializeField] private GameObject player2;
+	[SerializeField] private AudioSource startGame;
 
 	public UnityEvent OnGameStart;
-	public UnityEvent OnGameEnd;
+	public UnityEvent OnGameOver;
 
-	public bool IsGameRunning { get; private set; }
+	public bool IsGamePaused { get; private set; }
+
+	public bool IsGameOver { get; private set; }
+
 
 	void Awake() {
-		Singleton = this;
+		Instance = this;
 	}
 
-    void Start() {
-		//just in case
-		menuCanvas.gameObject.SetActive(true);   
-    }
-
-    public void StartGame() {
+	public void StartGame() {
 		startGame.Play();
-
-		//hide the menu on start button press
-		menuCanvas.gameObject.SetActive(false);
 		itemSpawner.SetActive(true);
 
 		player1.transform.position = new Vector3(-7, 0, 0);
 		player2.transform.position = new Vector3(7, 0, 0);
 
-		IsGameRunning = true;
+		IsGameOver = false;
 		OnGameStart.Invoke();
 	}
 
-	public void EndGame() {		
-		IsGameRunning = false;
-		menuCanvas.gameObject.SetActive(true);
+	public void EndGame() {
+		UnPauseGame();
+		IsGameOver = true;
 		itemSpawner.SetActive(false);
-		OnGameEnd.Invoke();
+		OnGameOver.Invoke();
+	}
+
+	public void PauseGame() {
+		IsGamePaused = true;
+		Time.timeScale = 0;
+	}
+
+	public void UnPauseGame() {
+		IsGamePaused = false;
+		Time.timeScale = 1;
 	}
 }
