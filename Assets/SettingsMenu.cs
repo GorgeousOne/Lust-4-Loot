@@ -7,7 +7,7 @@ public class SettingsMenu : MonoBehaviour {
 	[SerializeField] private Button backButton;
 
 	private void Start() {
-		backButton.onClick.AddListener(() => UiManager.Instance.CloseSettings());
+		backButton.onClick.AddListener(() => UiManager.Instance.CloseUi());
 	}
 
 	public void OnMusicVolumeChange() {

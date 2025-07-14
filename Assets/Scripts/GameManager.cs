@@ -35,14 +35,19 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void EndGame() {
+		UnPauseGame();
 		IsGameOver = true;
 		itemSpawner.SetActive(false);
 		OnGameOver.Invoke();
 	}
 
-	public bool TogglePause() {
-		IsGamePaused = !IsGamePaused;
-		Time.timeScale = IsGamePaused ? 0 : 1;
-		return IsGamePaused;
+	public void PauseGame() {
+		IsGamePaused = true;
+		Time.timeScale = 0;
+	}
+
+	public void UnPauseGame() {
+		IsGamePaused = false;
+		Time.timeScale = 1;
 	}
 }

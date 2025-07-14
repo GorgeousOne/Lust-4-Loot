@@ -234,7 +234,7 @@
             "id": "c248cec7-f6f9-4deb-ac14-90eccafa31eb",
             "actions": [
                 {
-                    "name": "TogglePause",
+                    "name": "Pause",
                     "type": "Button",
                     "id": "36ef8d86-bf53-4ef6-bc85-2dd82153ff68",
                     "expectedControlType": "",
@@ -243,7 +243,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Return",
+                    "name": "Back",
                     "type": "Button",
                     "id": "9213cba6-3172-486d-8bd1-ac1778fdaa90",
                     "expectedControlType": "",
@@ -260,7 +260,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "TogglePause",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -271,7 +271,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "TogglePause",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -282,7 +282,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Return",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -293,7 +293,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "Return",
+                    "action": "Back",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

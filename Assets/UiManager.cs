@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour {
 
@@ -16,66 +18,64 @@ public class UiManager : MonoBehaviour {
 	private Stack<GameObject> uiStack = new Stack<GameObject>();
 	private GameObject activeUi;
 	private InputAction pauseAction;
+	private InputAction backAction;
 
 	void Awake() {
 		Instance = this;
-		pauseAction = inputActions.FindActionMap("UI").FindAction("TogglePause");
-		pauseAction.performed += ctx => OnTogglePause();
+		pauseAction = inputActions.FindActionMap("UI").FindAction("Pause");
+		backAction = inputActions.FindActionMap("UI").FindAction("Back");
+		pauseAction.performed += ctx => OnPausePerformed();
+		backAction.performed += ctx => CloseUi();
 	}
 
 	void Start() {
 		GameManager.Instance.OnGameStart.AddListener(OnGameStart);
 		GameManager.Instance.OnGameOver.AddListener(OnGameOver);
-
-		//just in case
-		titleUi.SetActive(true);
-		activeUi = titleUi;
+		OpenUi(titleUi);
     }	
-
 
     void OnEnable() => pauseAction.Enable();
 	void OnDisable() => pauseAction.Disable();
 
 	private void OnGameStart() {
-		titleUi.SetActive(false);
-		activeUi = null;
+		CloseUi();
 	}
 
 	private void OnGameOver() {
-		titleUi.SetActive(true);
-		activeUi = titleUi;
+		OpenUi(titleUi);
 	}
 
-	public void OpenSettings() {
-		if (activeUi != null) {
-			activeUi.SetActive(false);
-			uiStack.Push(activeUi);
+	public void CloseUi() {
+		if (activeUi == pauseUi) {
+			GameManager.Instance.UnPauseGame();
 		}
-		settingsUi.SetActive(true);
-		activeUi = settingsUi;
+		activeUi.SetActive(false);
+
+		if (uiStack.Count > 0) {
+			activeUi = uiStack.Pop();
+			activeUi.SetActive(true);
+		}
 	}
 
-	public void CloseSettings() {
-		settingsUi.SetActive(false);
-		activeUi = uiStack.Pop();
-		activeUi.SetActive(true);
-	}
-
-	public void OnTogglePause() {
-		if (GameManager.Instance.IsGameOver) {
+	public void OnPausePerformed() {
+		if (GameManager.Instance.IsGameOver || GameManager.Instance.IsGamePaused) {
 			return;
 		}
-		bool isGamePaused = GameManager.Instance.TogglePause();
-		pauseUi.gameObject.SetActive(isGamePaused);
-		activeUi = isGamePaused ? pauseUi : null;
- 		Debug.Log("Game " + (isGamePaused ? "Paused" : "Unpaused"));
+		GameManager.Instance.PauseGame();
+		OpenUi(pauseUi);
 	}
 
-	void OnBackPerformed() {
-		if (activeUi == settingsUi) {
-			CloseSettings();
-		} else if (activeUi == pauseUi) {
-			OnTogglePause();
-		}
+	public void OpenUi(GameObject ui) {
+		uiStack.Clear();
+		activeUi?.SetActive(false);
+		ui.SetActive(true);
+		activeUi = ui;
+	}
+
+	public void OpenUiNested(GameObject ui) {
+		uiStack.Push(activeUi);
+		activeUi.SetActive(false);
+		ui.SetActive(true);
+		activeUi = ui;
 	}
 }
