@@ -28,15 +28,15 @@ public class ScoreHandler : MonoBehaviour {
 
 
 	void Start() {
-		GameManager.Singleton.OnGameStart.AddListener(SetupIngameUi);
-		GameManager.Singleton.OnGameOver.AddListener(HideInGameUI);
+		GameManager.Instance.OnGameStart.AddListener(SetupIngameUi);
+		GameManager.Instance.OnGameOver.AddListener(HideInGameUI);
 		islandMove.OnLootDeliver.AddListener(OnLootDeliver);
 
 		HideInGameUI();
     }
 
 	void Update() {
-		if (GameManager.Singleton.IsGameOver || GameManager.Singleton.IsGamePaused) {
+		if (GameManager.Instance.IsGameOver || GameManager.Instance.IsGamePaused) {
 			return;
 		}
 		remainingTime -= Time.deltaTime;
@@ -126,6 +126,6 @@ public class ScoreHandler : MonoBehaviour {
 		}
 		winnerText.gameObject.SetActive(true);
 		//reset score
-		GameManager.Singleton.EndGame();
+		GameManager.Instance.EndGame();
 	}	
 }

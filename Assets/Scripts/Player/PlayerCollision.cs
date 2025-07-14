@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour {
 	private List<GameObject> hoardedItems = new();
 
 	void Start() {
-		GameManager.Singleton.OnGameStart.AddListener(TakeDamage);	
+		GameManager.Instance.OnGameStart.AddListener(TakeDamage);	
 	}
 
 	
