@@ -69,10 +69,6 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3674021070452980416, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3674021070452980416, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -182,11 +178,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6026919258544251610, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.86
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6026919258544251610, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6026919258544251610, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: m_LocalPosition.z
