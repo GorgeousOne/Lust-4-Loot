@@ -2,22 +2,13 @@
     "name": "GamepadInput",
     "maps": [
         {
-            "name": "UI",
+            "name": "GameUI",
             "id": "c248cec7-f6f9-4deb-ac14-90eccafa31eb",
             "actions": [
                 {
                     "name": "Pause",
                     "type": "Button",
                     "id": "36ef8d86-bf53-4ef6-bc85-2dd82153ff68",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Back",
-                    "type": "Button",
-                    "id": "9213cba6-3172-486d-8bd1-ac1778fdaa90",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -46,10 +37,47 @@
                     "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PauseUI",
+            "id": "4a077d25-5dd7-46a7-bde7-92879a870ab4",
+            "actions": [
+                {
+                    "name": "Unpause",
+                    "type": "Button",
+                    "id": "ffb900fe-79da-4d78-9196-b9c0cd9b398a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "88141f13-ba09-44d8-8b05-9849cef8dda7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ae424e90-d0ad-4f91-af4c-30a53fb12bf6",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Unpause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "3ffbefe0-9d45-48fd-8586-3bb644b6693c",
+                    "id": "de34efc7-6335-4c64-a7ec-4f5785f66586",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
@@ -60,7 +88,7 @@
                 },
                 {
                     "name": "",
-                    "id": "02e5dcec-ae50-4cad-9b61-61bb95b3ad14",
+                    "id": "33ef2f29-72d7-49fb-8071-c1af83f4be55",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",

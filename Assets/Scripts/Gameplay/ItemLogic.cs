@@ -27,6 +27,9 @@ public class ItemLogic : MonoBehaviour {
 	}
 	
 	public void Update() {
+		// if (GameManager.Instance.IsGameOver) {
+		// 	return;
+		// }
 		if (unloadStartTime != 0) {
 			float unloadProgress = (Time.time - unloadStartTime) / unloadTime;
 			float smooth = 1 - Mathf.Pow(1 - unloadProgress, 3);

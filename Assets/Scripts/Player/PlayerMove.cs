@@ -33,14 +33,18 @@ public class PlayerMove : MonoBehaviour {
 			return;
 		}
 		lastShootTime = Time.time;
+		FireBullet();
+	}
+
+	public GameObject FireBullet() {
 		int playerFacing = playerNumber == 1 ? 1 : -1;
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-
 		bullet.layer = LayerMask.NameToLayer("Bullet" + playerNumber);
 
 		Rigidbody2D billetRb = bullet.GetComponent<Rigidbody2D>();
 		billetRb.linearVelocity = Vector2.right * bulletSpeed * playerFacing;
 		fireSound.Play();
+		return bullet;
 	}
 
 	public void OnMove(InputAction.CallbackContext context) {

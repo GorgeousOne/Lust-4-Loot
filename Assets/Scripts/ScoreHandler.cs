@@ -29,10 +29,10 @@ public class ScoreHandler : MonoBehaviour {
 
 	void Start() {
 		GameManager.Instance.OnGameStart.AddListener(SetupIngameUi);
-		GameManager.Instance.OnGameOver.AddListener(HideInGameUI);
+		GameManager.Instance.OnGameOver.AddListener(HideIngameUi);
 		islandMove.OnLootDeliver.AddListener(OnLootDeliver);
 
-		HideInGameUI();
+		HideIngameUi();
     }
 
 	void Update() {
@@ -40,7 +40,6 @@ public class ScoreHandler : MonoBehaviour {
 			return;
 		}
 		remainingTime -= Time.deltaTime;
-
 		if (remainingTime < 0) {
 			countdownText.text = "0:00";
 			AnnounceWinner(GetWinnerIdx());
@@ -60,8 +59,7 @@ public class ScoreHandler : MonoBehaviour {
 		UpdateTimer();
 	}
 
-	private void HideInGameUI() {
-		//TODO game ui activate true
+	private void HideIngameUi() {
 		ingameCanvas.gameObject.SetActive(false);
 		islandMove.gameObject.SetActive(false);
 	}

@@ -15,13 +15,15 @@ public class PlayerCollision : MonoBehaviour {
 	void Start() {
 		GameManager.Instance.OnGameStart.AddListener(TakeDamage);	
 	}
-
 	
-	private void Update() {
-		for (int i = 0; i < hoardedItems.Count; i++) {
-			Vector3 itemPos = (Vector3) stackOffset + i * stackDist * Vector3.up;
-			
-			if (playerNumber == 2) {
+	private void Update()
+	{
+		for (int i = 0; i < hoardedItems.Count; i++)
+		{
+			Vector3 itemPos = (Vector3)stackOffset + i * stackDist * Vector3.up;
+
+			if (playerNumber == 2)
+			{
 				itemPos.x *= -1;
 			}
 			hoardedItems[i].transform.position = transform.position + itemPos;
@@ -32,7 +34,7 @@ public class PlayerCollision : MonoBehaviour {
 		return hoardedItems.Count;
 	}
 
-	private void PickupItem(GameObject item) {
+	public void PickupItem(GameObject item) {
 		item.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Front";
 		Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
 		rb.linearVelocity = Vector2.zero;
