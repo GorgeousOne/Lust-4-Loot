@@ -32,7 +32,7 @@ public class PlayerCollision : MonoBehaviour {
 		return hoardedItems.Count;
 	}
 
-	private void PickupItem(GameObject item) {
+	public void PickupItem(GameObject item) {
 		item.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Front";
 		Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
 		rb.linearVelocity = Vector2.zero;

@@ -32,6 +32,10 @@ public class PlayerMove : MonoBehaviour {
 		if (Time.time < lastShootTime + reloadTime) {
 			return;
 		}
+		FireBullet();
+	}
+
+	public GameObject FireBullet() {
 		lastShootTime = Time.time;
 		int playerFacing = playerNumber == 1 ? 1 : -1;
 		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
@@ -41,6 +45,7 @@ public class PlayerMove : MonoBehaviour {
 		Rigidbody2D billetRb = bullet.GetComponent<Rigidbody2D>();
 		billetRb.linearVelocity = Vector2.right * bulletSpeed * playerFacing;
 		fireSound.Play();
+		return bullet;
 	}
 
 	public void OnMove(InputAction.CallbackContext context) {
