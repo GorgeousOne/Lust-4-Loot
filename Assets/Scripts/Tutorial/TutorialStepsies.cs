@@ -11,11 +11,18 @@ public class TutorialStepsies : MonoBehaviour {
 	public GameObject player1;
 	public GameObject player2;
 	public GameObject dashedBoxesContainer;
-	public GameObject lootContainer;
+	public GameObject lootPrefab;
+
 	public GameObject ingameUi;
 	public Slider tugOfWarMeter;
 	public IslandLogic island;
 
+	private List<GameObject> demoLoot = new();
+
+	private bool circleAnimEnded;
+	private bool cashAnimEnded;
+	private bool meterAnimEnded;
+	private GameObject animBullet;
 
 	public void OnEnable() {
 		var steps = new List<TutorialStep>() {
@@ -45,27 +52,39 @@ public class TutorialStepsies : MonoBehaviour {
 				onStepExit = () => StopMovingMeter()
 			}
 		};
+
+		island.transform.position = new Vector2(0, -2);
+		island.gameObject.SetActive(true);
+		ingameUi.SetActive(true);
+
+		circleAnimEnded = false;
+		cashAnimEnded = false;
+		meterAnimEnded = false;
+
 		runner.Init(steps);
 	}
 
 	void ShowTerritory() {
-		island.transform.position = new Vector2(0, -2);
-		island.gameObject.SetActive(true);
+		player1.transform.position = new Vector2(-7, 0);
+		player2.transform.position = new Vector2(7, 0);
 		dashedBoxesContainer.SetActive(true);
-		ingameUi.SetActive(true);
 	}
 
 	void HideTerritory() {
 		dashedBoxesContainer.SetActive(false);
 	}
 
-	bool circleAnimEnded = false;
-	bool cashAnimEnded = false;
-	bool meterAnimEnded = false;
-	GameObject animBullet;
-
 	void AnimateHoarding() {
-		lootContainer.SetActive(true);
+		demoLoot.Add(Instantiate(lootPrefab, new Vector2(-5f, 2f), Quaternion.identity));
+		demoLoot.Add(Instantiate(lootPrefab, new Vector2(-5f, -2f), Quaternion.identity));
+		demoLoot.Add(Instantiate(lootPrefab, new Vector2(5f, 2f), Quaternion.identity));
+		demoLoot.Add(Instantiate(lootPrefab, new Vector2(5f, -2f), Quaternion.identity));
+		demoLoot[0].name = "1";
+		demoLoot[1].name = "1";
+
+		foreach (var item in demoLoot) {
+			item.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+		}
 		StartCoroutine(CirclePlayers());
 	}
 
@@ -89,24 +108,22 @@ public class TutorialStepsies : MonoBehaviour {
 
 	void StopHoarding() {
 		circleAnimEnded = true;
-		lootContainer.SetActive(false);
+		player1.transform.position = new Vector2(-7, 0);
+		player2.transform.position = new Vector2(7, 0);
 		var playerPickup1 = player1.GetComponent<PlayerCollision>();
 		var playerPickup2 = player2.GetComponent<PlayerCollision>();
 
 		//pickup any skipped items?
-		foreach (Transform child in lootContainer.transform) {
-			if (!child.parent.tag.Contains("Player")) {
-				var pos = transform.position;
-				if ((player1.transform.position - pos).sqrMagnitude <
-					(player2.transform.position - pos).sqrMagnitude) {
-					playerPickup1.PickupItem(child.gameObject);
+		foreach (var child in demoLoot) {
+			if (!child.transform.parent.tag.Contains("Player")) {
+				if (child.name == "1") {
+					playerPickup1.PickupItem(child);
 				} else {
-					playerPickup2.PickupItem(child.gameObject);
+					playerPickup2.PickupItem(child);
 				}
 			}
 		}
-		player1.transform.position = new Vector2(-7, 0);
-		player2.transform.position = new Vector2(7, 0);
+		demoLoot.Clear();
 	}
 
 	void CashIn() {
@@ -146,23 +163,20 @@ public class TutorialStepsies : MonoBehaviour {
 	}
 
 	void StartShooting() {
-		player2.transform.position = new Vector2(7, 0.5f);
-		// animBullet = player1.GetComponent<PlayerMove>().FireBullet();
-		// print("i SHOT " + animBullet.tag);
+		animBullet = player1.GetComponent<PlayerMove>().FireBullet();
 	}
 
 	void StopShooting() {
-		player2.transform.position = new Vector2(7, 0f);
 		if (animBullet) {
 			Destroy(animBullet);
 		}
 	}
 
 	void MoveMeter() {
-		StartCoroutine(diddleMeter());
+		StartCoroutine(DiddleMeter());
 	}
 
-	IEnumerator diddleMeter() {
+	IEnumerator DiddleMeter() {
 		float[] jumps = { 0.3f, 0.8f, 0.2f, 0.5f };
 
 		foreach(float val in jumps) {

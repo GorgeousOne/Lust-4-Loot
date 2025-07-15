@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
 
 	void Awake() {
 		Instance = this;
+		IsGameOver = true;
 	}
 
 	public void StartGame() {

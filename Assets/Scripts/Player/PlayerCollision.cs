@@ -80,7 +80,6 @@ public class PlayerCollision : MonoBehaviour {
 	}
 	
 	private void OnCollisionEnter2D(Collision2D collision) {
-		Debug.Log("I was SHOT" + collision.gameObject.tag);
 		if (collision.gameObject.CompareTag("CannonBall")) {
 			TakeDamage();
 		} else if (collision.gameObject.CompareTag("Collectable")) {
