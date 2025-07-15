@@ -66,7 +66,6 @@ public class TutorialStepsies : MonoBehaviour {
 
 	void AnimateHoarding() {
 		lootContainer.SetActive(true);
-		Debug.Log("step 2");
 		StartCoroutine(CirclePlayers());
 	}
 
@@ -116,22 +115,26 @@ public class TutorialStepsies : MonoBehaviour {
 
 	IEnumerator MoveP1() {
 		float elapsed = 0f;
-		float duration = 2f;
+		float duration = 1f;
 
 		var start = new Vector2(-7, 0);
-		var end = new Vector2(0, -1);
+		var end = new Vector2(-1, -1);
 
-		while (elapsed < duration/2 && !cashAnimEnded) {
-			elapsed += Time.deltaTime;
-			float t = Mathf.SmoothStep(0, 1, elapsed / (duration/2));
+		while (elapsed < duration && !cashAnimEnded) {
+			float t = Mathf.SmoothStep(0, 1, elapsed / duration);
 			player1.transform.position = Vector3.Lerp(start, end, t);
 			yield return null;
-		}
-		while (elapsed < duration && !cashAnimEnded) {
 			elapsed += Time.deltaTime;
-			float t = Mathf.SmoothStep(0, 1, (elapsed-duration/2) / (duration/2));
+		}
+		player1.transform.position = end;
+		yield return new WaitForSeconds(1);
+		elapsed = 0;
+
+		while (elapsed < duration && !cashAnimEnded) {
+			float t = Mathf.SmoothStep(0, 1, elapsed / duration);
 			player1.transform.position = Vector3.Lerp(end, start, t);
 			yield return null;
+			elapsed += Time.deltaTime;
 		}
 	}
 
@@ -143,10 +146,13 @@ public class TutorialStepsies : MonoBehaviour {
 	}
 
 	void StartShooting() {
-		animBullet = player1.GetComponent<PlayerMove>().FireBullet();
+		player2.transform.position = new Vector2(7, 0.5f);
+		// animBullet = player1.GetComponent<PlayerMove>().FireBullet();
+		// print("i SHOT " + animBullet.tag);
 	}
 
 	void StopShooting() {
+		player2.transform.position = new Vector2(7, 0f);
 		if (animBullet) {
 			Destroy(animBullet);
 		}

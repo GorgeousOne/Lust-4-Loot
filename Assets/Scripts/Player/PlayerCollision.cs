@@ -15,13 +15,15 @@ public class PlayerCollision : MonoBehaviour {
 	void Start() {
 		GameManager.Instance.OnGameStart.AddListener(TakeDamage);	
 	}
-
 	
-	private void Update() {
-		for (int i = 0; i < hoardedItems.Count; i++) {
-			Vector3 itemPos = (Vector3) stackOffset + i * stackDist * Vector3.up;
-			
-			if (playerNumber == 2) {
+	private void Update()
+	{
+		for (int i = 0; i < hoardedItems.Count; i++)
+		{
+			Vector3 itemPos = (Vector3)stackOffset + i * stackDist * Vector3.up;
+
+			if (playerNumber == 2)
+			{
 				itemPos.x *= -1;
 			}
 			hoardedItems[i].transform.position = transform.position + itemPos;
@@ -78,6 +80,7 @@ public class PlayerCollision : MonoBehaviour {
 	}
 	
 	private void OnCollisionEnter2D(Collision2D collision) {
+		Debug.Log("I was SHOT" + collision.gameObject.tag);
 		if (collision.gameObject.CompareTag("CannonBall")) {
 			TakeDamage();
 		} else if (collision.gameObject.CompareTag("Collectable")) {

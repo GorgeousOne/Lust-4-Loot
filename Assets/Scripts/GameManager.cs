@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void EndGame() {
-		UnPauseGame();
+		UnpauseGame();
 		IsGameOver = true;
 		itemSpawner.SetActive(false);
 		OnGameOver.Invoke();
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 0;
 	}
 
-	public void UnPauseGame() {
+	public void UnpauseGame() {
 		IsGamePaused = false;
 		Time.timeScale = 1;
 	}
