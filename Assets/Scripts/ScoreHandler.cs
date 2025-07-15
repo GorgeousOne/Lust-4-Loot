@@ -88,7 +88,6 @@ public class ScoreHandler : MonoBehaviour {
 	}
 
 	public void AddPoints(int numItems, bool isPlayer1) {
-		Debug.Log(numItems);
 		int points = numItems;
 		//1>1, 2>3, 3>6, 4>9, 5>12, 6>15, 7>18
 		if (points > 1) {

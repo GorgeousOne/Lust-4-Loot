@@ -652,47 +652,47 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 6129f9f7-50b6-4e02-ac9c-ad3a4f39faec
-    m_ActionName: 'Player1/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/leftStick]'
+    m_ActionId: 36ef8d86-bf53-4ef6-bc85-2dd82153ff68
+    m_ActionName: 'UI/Pause[/Keyboard/escape,/XInputControllerWindows/start]'
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 7887f8d1-f0bc-4bcc-843e-2d71017ac79d
-    m_ActionName: 'Player1/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]'
+    m_ActionId: 9213cba6-3172-486d-8bd1-ac1778fdaa90
+    m_ActionName: 'UI/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4e2da69e-dda0-4072-9993-5661233598d9
-    m_ActionName: 'Player1/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]'
+      m_Calls:
+      - m_Target: {fileID: 6026919258544251611}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7865ed30-af63-424f-b583-4e3669d32f34
+    m_ActionName: 'Controller/Move[/XInputControllerWindows/leftStick]'
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 26b1b899-9331-44f9-b332-fead2f50c579
-    m_ActionName: 'Player1/Menu[/Keyboard/escape,/XInputControllerWindows/start]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 558a7666-e9be-40e1-8ae7-b8f566187521
-    m_ActionName: 'Player1/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 29cd19a1-3979-4444-b508-455f43d1f712
-    m_ActionName: 'Player2/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ba0a79c9-bb02-4ab5-80ce-c6acf75f5c64
-    m_ActionName: 'Player2/Shoot[/Keyboard/enter,/XInputControllerWindows/buttonWest]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2e8a1171-6eb2-4ff6-a82b-68c26e19d76e
-    m_ActionName: 'Player2/Interact[/Keyboard/e,/XInputControllerWindows/buttonWest]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fd7f222c-743a-448d-8293-659f58826b18
-    m_ActionName: 'Player2/Menu[/Keyboard/escape,/XInputControllerWindows/start]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1391a7c2-bf84-45fb-9381-bede6baf11b4
-    m_ActionName: 'Player2/Back[/Keyboard/escape,/XInputControllerWindows/buttonEast]'
+      m_Calls:
+      - m_Target: {fileID: 6026919258544251611}
+        m_TargetAssemblyTypeName: PlayerMove, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f1033636-2331-45d9-841d-bc4d57be3ba3
+    m_ActionName: 'Controller/Shoot[/XInputControllerWindows/buttonWest]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player1
+  m_DefaultControlScheme: Controller
+  m_DefaultActionMap: Controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &6026919258544251611

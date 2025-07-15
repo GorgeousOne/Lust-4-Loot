@@ -44,10 +44,15 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	public void OnMove(InputAction.CallbackContext context) {
+		Velocitate(context.ReadValue<Vector2>());
+	}
+
+	//helper function for shared keyboard input from outside
+	public void Velocitate(Vector2 input) {
 		if (GameManager.Instance.IsGameOver || GameManager.Instance.IsGamePaused) {
 			return;
 		}
-		inputVel = context.ReadValue<Vector2>();
+		inputVel = input;
 	}
 
 	private void FixedUpdate() {
