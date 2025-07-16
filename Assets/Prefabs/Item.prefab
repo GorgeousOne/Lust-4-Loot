@@ -110,14 +110,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca7ade12ebf2ba4a837a06fc92f3786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.75
-  bounceVel: 6
-  fallVel: 5
+  splashPrefab: {fileID: 5880744708401674247, guid: 1230f1e9257ff8e4ea585a6682b7e613, type: 3}
+  yVel: 3
+  xVelRange: 5
+  splashOffset: -1
+  splashRange: 1
+  gravity: 3
+  floatSpeed: 0.75
   unloadTime: 1
   icons:
   - {fileID: 21300000, guid: 75027c0a1c32df94bb5cf1dfcf22da4a, type: 3}
   - {fileID: 21300000, guid: feea214d74120824d83312e464ddc8f4, type: 3}
-  onCannonBallHit:
+  OnCannonBallHit:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &9199969540338091354
