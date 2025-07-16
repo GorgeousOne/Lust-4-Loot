@@ -8668,6 +8668,86 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -639.20074
       objectReference: {fileID: 0}
+    - target: {fileID: 1015524827232405432, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015524827232405432, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015524827232405432, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1802039714}
+    - target: {fileID: 1015524827232405432, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_MusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015524827232405432, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015524827232405432, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1802039714}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1802039714}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_SfxVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ARGH
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270359378105503474, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2786252277656385729, guid: 5a5e58f816316bc448de66c028a21a31, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5

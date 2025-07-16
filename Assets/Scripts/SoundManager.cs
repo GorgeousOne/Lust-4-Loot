@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -23,7 +24,24 @@ public class SoundManager : MonoBehaviour {
 	private static float sfxVolume = 1f;
 	public static float SfxVolume {
 		get => sfxVolume;
-		set => sfxVolume = Mathf.Clamp(value, 0f, 1f);
+		set {
+			sfxVolume = Mathf.Clamp(value, 0f, 1f);
+			instance.TestSfx();
+		}
+	}
+	
+	private Coroutine delay;
+	private void TestSfx() {
+			if (delay != null) {
+				StopCoroutine(delay);
+			}
+			delay = StartCoroutine(PlayDelayedTestSound());
+	}
+
+	private IEnumerator PlayDelayedTestSound() {
+		yield return new WaitForSeconds(0.2f);
+		PlaySfx(SoundType.ARGH);
+		delay = null;
 	}
 
 	public static float MusicVolume {
