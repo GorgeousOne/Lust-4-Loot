@@ -112,7 +112,7 @@ public class ScoreHandler : MonoBehaviour {
 	}
 
 	private void AnnounceWinner(int playerIdx) {
-		endGame.Play();
+		SoundManager.PlaySfx(SoundType.ARGH);
 
 		if (playerIdx == 1 || playerIdx == 2) {
 			winnerText.text = playerIdx == 1 ? "Player 1 wins!" : "Player 2 wins!";

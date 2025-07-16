@@ -23,8 +23,12 @@ public class GameManager : MonoBehaviour {
 		IsGameOver = true;
 	}
 
-	public void StartGame() {
-		startGame.Play();
+    void Start() {
+		SoundManager.PlayMusic(SoundType.THEME);
+    }
+
+    public void StartGame() {
+		SoundManager.PlaySfx(SoundType.ARGH);
 		itemSpawner.SetActive(true);
 
 		player1.transform.position = new Vector3(-7, 0, 0);
@@ -35,6 +39,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void EndGame() {
+		SoundManager.PlaySfx(SoundType.FANFARE);
 		UnpauseGame();
 		IsGameOver = true;
 		itemSpawner.SetActive(false);

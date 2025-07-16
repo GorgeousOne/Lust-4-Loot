@@ -13,8 +13,6 @@ public class PlayerMove : MonoBehaviour {
 	public float bulletSpeed = 5f;
 	public float reloadTime = 0.5f;
 
-	public AudioSource fireSound;
-
 	private Vector2 inputVel;
 	private Rigidbody2D rb;
 
@@ -43,7 +41,7 @@ public class PlayerMove : MonoBehaviour {
 
 		Rigidbody2D billetRb = bullet.GetComponent<Rigidbody2D>();
 		billetRb.linearVelocity = Vector2.right * bulletSpeed * playerFacing;
-		fireSound.Play();
+		SoundManager.PlaySfx(SoundType.SHOOT);
 		return bullet;
 	}
 
