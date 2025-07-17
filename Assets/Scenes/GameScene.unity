@@ -3077,6 +3077,7 @@ GameObject:
   - component: {fileID: 669864283}
   - component: {fileID: 669864285}
   - component: {fileID: 669864284}
+  - component: {fileID: 669864286}
   m_Layer: 5
   m_Name: Countdown
   m_TagString: Untagged
@@ -3202,6 +3203,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669864282}
   m_CullTransparentMesh: 1
+--- !u!95 &669864286
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669864282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4acbe523197a6a0419ab94879472ac51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &684455513
 GameObject:
   m_ObjectHideFlags: 0

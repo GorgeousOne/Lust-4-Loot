@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashPrefab: {fileID: 5880744708401674247, guid: 1230f1e9257ff8e4ea585a6682b7e613, type: 3}
-  yVel: 5
+  yVel: 6
   xVelRange: 0
   splashOffset: -1.5
   splashRange: 0.5

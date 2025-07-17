@@ -12,16 +12,17 @@ public class PlayerCollision : MonoBehaviour {
 
 	void Start() {
 		GameManager.Instance.OnGameStart.AddListener(TakeDamage);
+		GameManager.Instance.OnGameOver.AddListener(() => hoardedItems.Clear());
 	}
 
-	private void Update()
-	{
-		for (int i = 0; i < hoardedItems.Count; i++)
-		{
+	private void Update() {
+		if (GameManager.Instance.IsGameOver) {
+			return;
+		}
+		for (int i = 0; i < hoardedItems.Count; i++) {
 			Vector3 itemPos = (Vector3)stackOffset + i * stackDist * Vector3.up;
 
-			if (playerNumber == 2)
-			{
+			if (playerNumber == 2) {
 				itemPos.x *= -1;
 			}
 			hoardedItems[i].transform.position = transform.position + itemPos;

@@ -8,7 +8,7 @@ public class ScoreHandler : MonoBehaviour {
 
 	//ui slider to display the score
 	[SerializeField] private Canvas ingameCanvas;
-	
+
 	[SerializeField] private Slider tugOfWarMeter;
 	[SerializeField] private TMP_Text countdownText;
 	[SerializeField] private GameObject scorePrefab;
@@ -17,7 +17,7 @@ public class ScoreHandler : MonoBehaviour {
 
 	[SerializeField] private int gameDuration = 90;
 	[SerializeField] private int scoreRange = 50;
-	
+
 	[SerializeField] private AudioSource soundOnCashOut;
 	[SerializeField] private AudioSource endGame;
 	[SerializeField] private IslandLogic islandMove;
@@ -25,7 +25,7 @@ public class ScoreHandler : MonoBehaviour {
 
 	public float currentScore;
 	private float remainingTime;
-
+	private bool finalCountdowned;
 
 	void Start() {
 		GameManager.Instance.OnGameStart.AddListener(SetupIngameUi);
@@ -33,6 +33,7 @@ public class ScoreHandler : MonoBehaviour {
 		islandMove.OnLootDeliver.AddListener(OnLootDeliver);
 
 		HideIngameUi();
+		remainingTime = gameDuration;
     }
 
 	void Update() {
@@ -40,7 +41,13 @@ public class ScoreHandler : MonoBehaviour {
 			return;
 		}
 		remainingTime -= Time.deltaTime;
-		if (remainingTime < 0) {
+
+		//ye maybe just use a yield
+		if (remainingTime <= 10 && !finalCountdowned) {
+			countdownText.GetComponent<Animator>().SetTrigger("Final");
+			finalCountdowned = true;
+		}
+		if (remainingTime <= 0) {
 			countdownText.text = "0:00";
 			AnnounceWinner(GetWinnerIdx());
 			return;
@@ -55,7 +62,9 @@ public class ScoreHandler : MonoBehaviour {
 		currentScore = 0;
 		tugOfWarMeter.value = 0.5f;
 		remainingTime = gameDuration;
-
+		//idk this transitions to default onEnable by anyway
+		// countdownText.GetComponent<Animator>().SetTrigger("Reset");
+		finalCountdowned = false;
 		UpdateTimer();
 	}
 
@@ -106,7 +115,7 @@ public class ScoreHandler : MonoBehaviour {
 		Vector2 textPos = transform.position;
 		textPos += (isPlayer1 ? Vector2.left : Vector2.right) + Vector2.up * 0.5f;
 		GameObject scoreText = Instantiate(scorePrefab, textPos, Quaternion.identity, ingameCanvas.transform);
-		TMP_Text text = scoreText.GetComponent<TMP_Text>(); 
+		TMP_Text text = scoreText.GetComponent<TMP_Text>();
 		text.text = "+" + points;
 		text.color = isPlayer1 ? Color.red : Color.green;
 	}
@@ -124,5 +133,5 @@ public class ScoreHandler : MonoBehaviour {
 		winnerText.gameObject.SetActive(true);
 		//reset score
 		GameManager.Instance.EndGame();
-	}	
+	}
 }
