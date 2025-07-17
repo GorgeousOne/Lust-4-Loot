@@ -177,14 +177,14 @@ public class TutorialStepsies : MonoBehaviour {
 	}
 
 	IEnumerator DiddleMeter() {
-		float[] jumps = { 0.3f, 0.8f, 0.2f, 0.5f };
+		float[] jumps = { 0f, 1f, 0.5f };
 
 		foreach(float val in jumps) {
 			if (meterAnimEnded) {
 				break;
 			}
 			tugOfWarMeter.SetMeter(val);
-			yield return new WaitForSeconds(0.6f);
+			yield return new WaitForSeconds(1f);
 		}
 	}
 

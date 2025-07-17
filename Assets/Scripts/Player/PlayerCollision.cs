@@ -16,9 +16,6 @@ public class PlayerCollision : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (GameManager.Instance.IsGameOver) {
-			return;
-		}
 		for (int i = 0; i < hoardedItems.Count; i++) {
 			Vector3 itemPos = (Vector3)stackOffset + i * stackDist * Vector3.up;
 
