@@ -14,7 +14,7 @@ public class TutorialStepsies : MonoBehaviour {
 	public GameObject lootPrefab;
 
 	public GameObject ingameUi;
-	public Slider tugOfWarMeter;
+	public TugAnimator tugOfWarMeter;
 	public IslandLogic island;
 
 	private List<GameObject> demoLoot = new();
@@ -95,7 +95,7 @@ public class TutorialStepsies : MonoBehaviour {
 		var center1 = new Vector3(-5, 0);
 		var center2 = new Vector3(5, 0);
 		float radius = 2;
-				
+
 		while (elapsed < duration && !circleAnimEnded) {
 			elapsed += Time.deltaTime;
 			float angle = Mathf.SmoothStep(0, 360, elapsed / duration);
@@ -183,13 +183,13 @@ public class TutorialStepsies : MonoBehaviour {
 			if (meterAnimEnded) {
 				break;
 			}
-			tugOfWarMeter.value = val;
+			tugOfWarMeter.SetMeter(val);
 			yield return new WaitForSeconds(0.6f);
 		}
 	}
 
 	void StopMovingMeter() {
 		meterAnimEnded = true;
-		tugOfWarMeter.value = 0.5f;
+		tugOfWarMeter.SetMeter(0.5f);
 	}
 }

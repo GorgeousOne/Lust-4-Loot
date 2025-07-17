@@ -9,11 +9,10 @@ public class ScoreHandler : MonoBehaviour {
 	//ui slider to display the score
 	[SerializeField] private Canvas ingameCanvas;
 
-	[SerializeField] private Slider tugOfWarMeter;
+	[SerializeField] private TugAnimator tugOfWarMeter;
 	[SerializeField] private TMP_Text countdownText;
 	[SerializeField] private GameObject scorePrefab;
 	[SerializeField] private TMP_Text winnerText;
-	[SerializeField] private GameObject itemSpawner;
 
 	[SerializeField] private int gameDuration = 90;
 	[SerializeField] private int scoreRange = 50;
@@ -60,7 +59,7 @@ public class ScoreHandler : MonoBehaviour {
 		ingameCanvas.gameObject.SetActive(true);
 
 		currentScore = 0;
-		tugOfWarMeter.value = 0.5f;
+		tugOfWarMeter.SetMeter(0.5f);
 		remainingTime = gameDuration;
 		//idk this transitions to default onEnable by anyway
 		// countdownText.GetComponent<Animator>().SetTrigger("Reset");
@@ -102,7 +101,7 @@ public class ScoreHandler : MonoBehaviour {
 		}
 
 		currentScore += isPlayer1 ? points : -points;
-		tugOfWarMeter.value = Mathf.InverseLerp(-scoreRange, scoreRange, currentScore);
+		tugOfWarMeter.SetMeter(Mathf.InverseLerp(-scoreRange, scoreRange, currentScore));
 
 		if (points != 0) {
 			DisplayPoints(points, isPlayer1);
