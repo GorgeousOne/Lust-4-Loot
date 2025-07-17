@@ -55,4 +55,8 @@ public class GameManager : MonoBehaviour {
 		IsGamePaused = false;
 		Time.timeScale = 1;
 	}
+
+	public static void ExitGame() {
+	    Application.Quit();
+	}
 }

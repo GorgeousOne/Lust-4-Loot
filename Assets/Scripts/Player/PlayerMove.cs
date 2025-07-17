@@ -36,7 +36,8 @@ public class PlayerMove : MonoBehaviour {
 
 	public GameObject FireBullet() {
 		int playerFacing = playerNumber == 1 ? 1 : -1;
-		GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+		Vector3 offset = new Vector2(playerFacing * 0.5f, -0.1f);
+		GameObject bullet = Instantiate(bulletPrefab, transform.position + offset, Quaternion.identity);
 		bullet.layer = LayerMask.NameToLayer("Bullet" + playerNumber);
 
 		Rigidbody2D billetRb = bullet.GetComponent<Rigidbody2D>();
