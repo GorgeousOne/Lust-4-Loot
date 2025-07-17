@@ -8,40 +8,39 @@ public class PlayerCollision : MonoBehaviour {
 	public Vector2 stackOffset = Vector2.zero;
 	public float stackDist = .2f;
 	public UnityEvent<int> onItemsChanged;
-	public AudioSource soundOnHit;
-	public AudioSource pickUpLoot;
 	private List<GameObject> hoardedItems = new();
 
-	void start (){
+	void Start() {
+		GameManager.Instance.OnGameStart.AddListener(TakeDamage);
+		GameManager.Instance.OnGameOver.AddListener(() => hoardedItems.Clear());
 	}
 
-	
 	private void Update() {
 		for (int i = 0; i < hoardedItems.Count; i++) {
-			Vector3 itemPos = (Vector3) stackOffset + i * stackDist * Vector3.up;
-			
+			Vector3 itemPos = (Vector3)stackOffset + i * stackDist * Vector3.up;
+
 			if (playerNumber == 2) {
 				itemPos.x *= -1;
 			}
 			hoardedItems[i].transform.position = transform.position + itemPos;
 		}
 	}
-	
+
 	public int GetItemCount() {
 		return hoardedItems.Count;
 	}
 
-	private void PickupItem(GameObject item) {
+	public void PickupItem(GameObject item) {
 		item.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "Front";
 		Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
-		rb.velocity = Vector2.zero;
+		rb.linearVelocity = Vector2.zero;
 		item.transform.parent = transform;
 		item.layer = LayerMask.NameToLayer("Hoarded" + playerNumber);
 		ItemLogic itemLogic = item.GetComponent<ItemLogic>();
-		itemLogic.onCannonBallHit.AddListener(OnItemHit);
-		
+		itemLogic.OnCannonBallHit.AddListener(OnItemHit);
+
 		hoardedItems.Add(item);
-		pickUpLoot.Play();
+		SoundManager.PlaySfx(SoundType.PICKUP);
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 
@@ -52,30 +51,30 @@ public class PlayerCollision : MonoBehaviour {
 		hoardedItems.Clear();
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
-	
+
 	public void TakeDamage() {
-		soundOnHit.Play();
+		SoundManager.PlaySfx(SoundType.TAKE_DAMAGE);
 		foreach (GameObject item in hoardedItems) {
 			item.GetComponent<ItemLogic>().Drop();
 		}
 		hoardedItems.Clear();
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
-	
+
 	private void OnItemHit(GameObject item) {
-		int index = hoardedItems.IndexOf(item.gameObject);
-		
+		int index = hoardedItems.IndexOf(item);
+
 		if (index == -1) {
 			return;
 		}
-		soundOnHit.Play();
+		SoundManager.PlaySfx(SoundType.TAKE_DAMAGE);
 		for (int i = index; i < hoardedItems.Count; i++) {
 			hoardedItems[i].GetComponent<ItemLogic>().Drop();
 		}
 		hoardedItems.RemoveRange(index, hoardedItems.Count - index);
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
-	
+
 	private void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.CompareTag("CannonBall")) {
 			TakeDamage();
