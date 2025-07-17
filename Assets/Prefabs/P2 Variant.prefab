@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1378013638341419024, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3233494976229287471, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: m_DefaultActionMap
       value: Player2
