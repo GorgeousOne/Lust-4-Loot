@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour {
 			instance.TestSfx();
 		}
 	}
-	
+
 	private Coroutine delay;
 	private void TestSfx() {
 			if (delay != null) {
@@ -53,7 +53,8 @@ public class SoundManager : MonoBehaviour {
 		instance = this;
 	}
 
-	public static void PlaySfx(SoundType sound, float volume = 1f) {
+	public static void PlaySfx(SoundType sound, float volume = 1f, float pitch = 1f) {
+		instance.sfxSounds.pitch = pitch;
 		instance.sfxSounds.PlayOneShot(instance.soundList[(int)sound], volume * sfxVolume);
 	}
 

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 [Serializable]
 public class TutorialStep {
 	public string message;
+	public Vector2 textPos;
 	public Action onStepEnter;
 	public Action onStepExit;
 }
@@ -19,8 +21,8 @@ public class TutorialRunner : MonoBehaviour {
 	private List<TutorialStep> steps;
 	private int currentStep;
 
-    public void Start() { 
-		nextButton.onClick.AddListener(AdvanceStep);		
+    public void Start() {
+		nextButton.onClick.AddListener(AdvanceStep);
     }
 
     public void Init(List<TutorialStep> steps) {
@@ -37,7 +39,9 @@ public class TutorialRunner : MonoBehaviour {
 		if (index > 0) {
 			steps[index - 1].onStepExit?.Invoke();
 		}
+		SoundManager.PlaySfx(SoundType.ARGH, 1f, Random.Range(0.6f, 1.2f));
 		var step = steps[index];
+		tutorialText.rectTransform.anchoredPosition = step.textPos;
 		tutorialText.text = step.message;
 		step.onStepEnter?.Invoke();
 	}

@@ -16,6 +16,8 @@ public class TutorialStepsies : MonoBehaviour {
 	public GameObject ingameUi;
 	public TugAnimator tugOfWarMeter;
 	public IslandLogic island;
+	public GameObject moveKeysImage;
+	public GameObject shootKeysImage;
 
 	private List<GameObject> demoLoot = new();
 
@@ -28,26 +30,31 @@ public class TutorialStepsies : MonoBehaviour {
 		var steps = new List<TutorialStep>() {
 			new TutorialStep {
 				message = "Each pirate gets thar own territory!",
+				textPos = new Vector2(500, -400),
 				onStepEnter = () => ShowTerritory(),
 				onStepExit = () => HideTerritory(),
 			},
 			new TutorialStep {
 				message = "Sail the seas 'n hoard yer booty!",
+				textPos = new Vector2(500, -460),
 				onStepEnter = () => AnimateHoarding(),
 				onStepExit = () => StopHoarding()
 			},
 			new TutorialStep {
 				message = "Return t' Treasure Island t' cash in yer doubloons!",
+				textPos = new Vector2(500, -400),
 				onStepEnter = () => CashIn(),
 				onStepExit = () => CashOut(),
 			},
 			new TutorialStep {
 				message = "Blast yer rival wit' cannonballs!",
+				textPos = new Vector2(500, -460),
 				onStepEnter = () => StartShooting(),
 				onStepExit = () => StopShooting(),
 			},
 			new TutorialStep {
 				message = "First scallywag t' fill their meter wins!",
+				textPos = new Vector2(500, -400),
 				onStepEnter = () => MoveMeter(),
 				onStepExit = () => StopMovingMeter()
 			}
@@ -75,6 +82,7 @@ public class TutorialStepsies : MonoBehaviour {
 	}
 
 	void AnimateHoarding() {
+		moveKeysImage.SetActive(true);
 		demoLoot.Add(Instantiate(lootPrefab, new Vector2(-5f, 2f), Quaternion.identity));
 		demoLoot.Add(Instantiate(lootPrefab, new Vector2(-5f, -2f), Quaternion.identity));
 		demoLoot.Add(Instantiate(lootPrefab, new Vector2(5f, 2f), Quaternion.identity));
@@ -108,6 +116,7 @@ public class TutorialStepsies : MonoBehaviour {
 
 	void StopHoarding() {
 		circleAnimEnded = true;
+		moveKeysImage.SetActive(false);
 		player1.transform.position = new Vector2(-7, 0);
 		player2.transform.position = new Vector2(7, 0);
 		var playerPickup1 = player1.GetComponent<PlayerCollision>();
@@ -163,10 +172,12 @@ public class TutorialStepsies : MonoBehaviour {
 	}
 
 	void StartShooting() {
+		shootKeysImage.SetActive(true);
 		animBullet = player1.GetComponent<PlayerMove>().FireBullet();
 	}
 
 	void StopShooting() {
+		shootKeysImage.SetActive(false);
 		if (animBullet) {
 			Destroy(animBullet);
 		}

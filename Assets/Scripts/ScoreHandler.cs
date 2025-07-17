@@ -105,7 +105,10 @@ public class ScoreHandler : MonoBehaviour {
 
 		if (points != 0) {
 			DisplayPoints(points, isPlayer1);
-			islandMove.ChangePosRng();
+			//don't move the island in the tutorial scene
+			if (!GameManager.Instance.IsGameOver) {
+				islandMove.ChangePosRng();
+			}
 			soundOnCashOut.Play();
 		}
 	}
