@@ -9,6 +9,11 @@ public class BallsLogic : Droppable {
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision) {
-		Drop();
+		//remove item on contact with game bounds
+		if (collision.gameObject.layer == LayerMask.NameToLayer("Default")) {
+			Destroy(gameObject);
+		} else {
+			Drop();
+		}
 	}
 }

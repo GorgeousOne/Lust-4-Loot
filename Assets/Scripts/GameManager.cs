@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
 	}
 
     void Start() {
-		SoundManager.PlayMusic(SoundType.THEME);
+		SoundManager.PlayMusic(SoundType.THEME, 0.5f);
     }
 
     public void StartGame() {

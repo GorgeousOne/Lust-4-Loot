@@ -40,7 +40,7 @@ public class PlayerCollision : MonoBehaviour {
 		itemLogic.OnCannonBallHit.AddListener(OnItemHit);
 
 		hoardedItems.Add(item);
-		SoundManager.PlaySfx(SoundType.PICKUP);
+		SoundManager.PlaySfx(SoundType.PICKUP, 0.4f);
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
 

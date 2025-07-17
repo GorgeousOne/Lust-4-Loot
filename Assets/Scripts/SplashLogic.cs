@@ -4,7 +4,7 @@ using UnityEngine;
 public class SplashLogic : MonoBehaviour {
 
     void Start() {
-        SoundManager.PlaySfx(SoundType.SPLASH);
+        SoundManager.PlaySfx(SoundType.SPLASH, 0.8f);
 
         Animator anim = GetComponent<Animator>();
         AnimatorClipInfo info = anim.GetCurrentAnimatorClipInfo(0)[0];
