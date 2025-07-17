@@ -3,33 +3,30 @@ using UnityEngine.Events;
 using Random = UnityEngine.Random;
 using System.Collections.Generic;
 
-public class ItemLogic : MonoBehaviour {
+public class ItemLogic : Droppable {
 
-	public float speed = 0.75f;
-	public float bounceVel = 6f;
-	public float fallVel = 5f;
+	public float floatSpeed = 0.75f;
 	public float unloadTime = 1f;
 
 	public List<Sprite> icons;
-	
-	public UnityEvent<GameObject> onCannonBallHit;
+
+	public UnityEvent<GameObject> OnCannonBallHit;
 	private Rigidbody2D rb;
 	private Vector2 unloadStart;
 	private Transform unloadTarget;
 	private float unloadStartTime;
-	
+
 	private void OnEnable() {
 		rb = GetComponent<Rigidbody2D>();
-		rb.linearVelocity = Vector2.right * speed;
+		rb.linearVelocity = Vector2.right * floatSpeed;
 
 		int rand = Random.Range(0, icons.Count );
 		GetComponent<SpriteRenderer>().sprite = icons[rand];
 	}
-	
-	public void Update() {
-		// if (GameManager.Instance.IsGameOver) {
-		// 	return;
-		// }
+
+	protected new void Update() {
+		base.Update();
+
 		if (unloadStartTime != 0) {
 			float unloadProgress = (Time.time - unloadStartTime) / unloadTime;
 			float smooth = 1 - Mathf.Pow(1 - unloadProgress, 3);
@@ -45,19 +42,18 @@ public class ItemLogic : MonoBehaviour {
 		Destroy(gameObject, unloadTime);
 	}
 
-	public void Drop() {
-		rb.gravityScale = 3;
-		rb.linearVelocity = new Vector2(Random.Range(-fallVel, fallVel), bounceVel);
-
+	public new void Drop() {
+		base.Drop();
 		transform.parent = null;
 		Destroy(GetComponent<Collider2D>());
-		Destroy(gameObject, 5f);
 	}
-	
+
 	private void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.CompareTag("CannonBall")) {
-			onCannonBallHit.Invoke(gameObject);
+			//let the ship handle the dropping;
+			OnCannonBallHit.Invoke(gameObject);
 		}
+		//remove item on contact with game bounds
 		else if (other.gameObject.layer == LayerMask.NameToLayer("Default")) {
 			Destroy(gameObject);
 		}

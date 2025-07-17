@@ -11,17 +11,15 @@ public class PlayerCollision : MonoBehaviour {
 	private List<GameObject> hoardedItems = new();
 
 	void Start() {
-		GameManager.Instance.OnGameStart.AddListener(TakeDamage);	
+		GameManager.Instance.OnGameStart.AddListener(TakeDamage);
+		GameManager.Instance.OnGameOver.AddListener(() => hoardedItems.Clear());
 	}
-	
-	private void Update()
-	{
-		for (int i = 0; i < hoardedItems.Count; i++)
-		{
+
+	private void Update() {
+		for (int i = 0; i < hoardedItems.Count; i++) {
 			Vector3 itemPos = (Vector3)stackOffset + i * stackDist * Vector3.up;
 
-			if (playerNumber == 2)
-			{
+			if (playerNumber == 2) {
 				itemPos.x *= -1;
 			}
 			hoardedItems[i].transform.position = transform.position + itemPos;
@@ -39,8 +37,8 @@ public class PlayerCollision : MonoBehaviour {
 		item.transform.parent = transform;
 		item.layer = LayerMask.NameToLayer("Hoarded" + playerNumber);
 		ItemLogic itemLogic = item.GetComponent<ItemLogic>();
-		itemLogic.onCannonBallHit.AddListener(OnItemHit);
-		
+		itemLogic.OnCannonBallHit.AddListener(OnItemHit);
+
 		hoardedItems.Add(item);
 		SoundManager.PlaySfx(SoundType.PICKUP);
 		onItemsChanged.Invoke(hoardedItems.Count);
@@ -53,7 +51,7 @@ public class PlayerCollision : MonoBehaviour {
 		hoardedItems.Clear();
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
-	
+
 	public void TakeDamage() {
 		SoundManager.PlaySfx(SoundType.TAKE_DAMAGE);
 		foreach (GameObject item in hoardedItems) {
@@ -62,10 +60,10 @@ public class PlayerCollision : MonoBehaviour {
 		hoardedItems.Clear();
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
-	
+
 	private void OnItemHit(GameObject item) {
-		int index = hoardedItems.IndexOf(item.gameObject);
-		
+		int index = hoardedItems.IndexOf(item);
+
 		if (index == -1) {
 			return;
 		}
@@ -76,7 +74,7 @@ public class PlayerCollision : MonoBehaviour {
 		hoardedItems.RemoveRange(index, hoardedItems.Count - index);
 		onItemsChanged.Invoke(hoardedItems.Count);
 	}
-	
+
 	private void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.CompareTag("CannonBall")) {
 			TakeDamage();

@@ -167,6 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 101354583}
   - component: {fileID: 101354584}
+  - component: {fileID: 101354585}
   m_Layer: 5
   m_Name: Tug Of War Meter
   m_TagString: Untagged
@@ -247,6 +248,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &101354585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101354582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed4b8512f9de2c40a29a8ac47a37085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapTime: 0.5
 --- !u!1 &119605465
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,11 +468,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingameCanvas: {fileID: 1447768764}
-  tugOfWarMeter: {fileID: 101354584}
+  tugOfWarMeter: {fileID: 101354585}
   countdownText: {fileID: 669864284}
   scorePrefab: {fileID: 3888260951824441553, guid: e54ed4b56cc71ff479a3eed4eeaccf9f, type: 3}
   winnerText: {fileID: 1272023604}
-  itemSpawner: {fileID: 0}
   gameDuration: 120
   scoreRange: 20
   soundOnCashOut: {fileID: 308230145}
@@ -767,8 +780,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1293395075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2892,7 +2905,7 @@ RectTransform:
   m_Father: {fileID: 579700803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3077,6 +3090,7 @@ GameObject:
   - component: {fileID: 669864283}
   - component: {fileID: 669864285}
   - component: {fileID: 669864284}
+  - component: {fileID: 669864286}
   m_Layer: 5
   m_Name: Countdown
   m_TagString: Untagged
@@ -3202,6 +3216,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669864282}
   m_CullTransparentMesh: 1
+--- !u!95 &669864286
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669864282}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4acbe523197a6a0419ab94879472ac51, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &684455513
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,7 +4436,7 @@ MonoBehaviour:
   dashedBoxesContainer: {fileID: 296011370}
   lootPrefab: {fileID: 4171627971735253711, guid: 3631b65adbae5fe40949bd829628688d, type: 3}
   ingameUi: {fileID: 1447768761}
-  tugOfWarMeter: {fileID: 101354584}
+  tugOfWarMeter: {fileID: 101354585}
   island: {fileID: 963877487}
 --- !u!1 &1017592641
 GameObject:
@@ -6082,7 +6118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1447768762
 MonoBehaviour:
   m_ObjectHideFlags: 0
