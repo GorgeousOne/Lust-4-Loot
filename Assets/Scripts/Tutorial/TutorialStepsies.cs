@@ -124,7 +124,8 @@ public class TutorialStepsies : MonoBehaviour {
 
 		//pickup any skipped items?
 		foreach (var child in demoLoot) {
-			if (!child.transform.parent.tag.Contains("Player")) {
+
+			if (child.transform.parent == null || !child.transform.parent.tag.Contains("Player")) {
 				if (child.name == "1") {
 					playerPickup1.PickupItem(child);
 				} else {
@@ -173,7 +174,7 @@ public class TutorialStepsies : MonoBehaviour {
 
 	void StartShooting() {
 		shootKeysImage.SetActive(true);
-		animBullet = player1.GetComponent<PlayerMove>().FireBullet();
+		animBullet = player1.GetComponent<PlayerMover>().FireBullet();
 	}
 
 	void StopShooting() {
