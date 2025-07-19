@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: actionMapName
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 6026919258544251606, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 6026919258544251607, guid: 8453805b3e46ac043bce362d9cf5730c, type: 3}
       propertyPath: playerNumber
       value: 2

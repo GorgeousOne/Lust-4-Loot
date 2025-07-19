@@ -12,6 +12,7 @@ public class UiAutoFocus : MonoBehaviour {
 	IEnumerator FocusFirstButton() {
 		yield return null;
 		Button firstButton = GetComponentInChildren<Button>(true);
+		EventSystem.current.SetSelectedGameObject(null);
 		EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
 	}
 }
